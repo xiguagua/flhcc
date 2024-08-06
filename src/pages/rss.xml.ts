@@ -10,7 +10,7 @@ export async function GET(context: Context) {
   const blog = (await getCollection("blog"))
   .filter(post => !post.data.draft);
 
-  const projects = (await getCollection("projects"))
+  const projects = (await getCollection("apps"))
     .filter(project => !project.data.draft);
 
   const items = [...blog, ...projects]
