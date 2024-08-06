@@ -11,7 +11,7 @@ type Props = {
   appIcon?: string;
 }
 
-const { entry, href, appIcon="" } = Astro.props;
+const { entry, href, appIcon } = Astro.props;
 const icons = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg,jpg,png,gif}');
 // if (!icons[appIcon || ""]) throw new Error(`"${appIcon}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`);
 ---
@@ -21,9 +21,9 @@ const icons = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg,
 
     <div class="flex flex-1 space-x-3 items-center truncate">
       <!-- {appIcon && ()} -->
+      {appIcon && (<Image class="rounded-lg" src={icons[appIcon]()} alt={entry.data.title} width="48" height="48"/>)
+}
       
-      <Image class="rounded-lg" src={icons[appIcon]()} alt={entry.data.title} width="48" height="48"/>
-
       <div class="font-semibold">
         {entry.data.title}
       </div>
