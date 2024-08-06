@@ -1,5 +1,5 @@
 ---
-title: "Bamboo Dragonfly"
+title: "Bamboo Dragonfly (竹蜻蜓)"
 description: "Minimal portfolio and blog build with astro and no frameworks."
 date: "Jun 01 2024"
 demoURL: "https://astro-nano-demo.vercel.app"
