@@ -19,6 +19,7 @@ export async function getStaticPaths() {
 const { app } = Astro.params
 const effectiveDate = new Date("2024-08-27")
 const mail = "contact@flhcctech.com"
+const h2Class = "font-semibold text-black dark:text-white"
 ---
 
 <PageLayout title={app} description={app}>
@@ -30,24 +31,27 @@ const mail = "contact@flhcctech.com"
         <div class="animate space-y-2">
     <p class="text-xs">Effective Date: { effectiveDate.toLocaleDateString() }</p>
 
-    <p>Your privacy is important to us. This Privacy Policy explains how <span class="font-bold text-black">`{app}`</span> ("we", "us", or "our") collects, uses, and protects your personal information when you use our mobile application (the "App").</p>
+    <p>Your privacy is important to us. This Privacy Policy explains how 
+        <span class="font-bold text-black dark:text-white">`{app}`</span> 
+        ("we", "us", or "our") collects, uses, and protects your personal information when you use our mobile application (the "App").
+    </p>
 
-    <h2 class="font-semibold text-black">1. No Personal Information Collected</h2>
+    <h2 class={h2Class}>1. No Personal Information Collected</h2>
     
     <p>We do not collect any personal information, such as your name, email address, phone number, or any other personal details. The App is designed to function without requiring any data that could be used to identify you as an individual.</p>
 
 
-    <h2 class="font-semibold text-black">2. Data Usage</h2>
+    <h2 class={h2Class}>2. Data Usage</h2>
     <p>The App may collect anonymous usage data to improve its functionality and performance. This data does not identify you and is used solely for analytical purposes to enhance the user experience.</p>
 
 
-    <h2 class="font-semibold text-black">3. Third-Party Services</h2>
+    <h2 class={h2Class}>3. Third-Party Services</h2>
     <p>We do not use any third-party services that collect or process personal information. If this changes in the future, we will update our Privacy Policy and notify you accordingly.</p>
 
-    <h2 class="font-semibold text-black">4. Changes to This Privacy Policy</h2>
+    <h2 class={h2Class}>4. Changes to This Privacy Policy</h2>
     <p>We may update this Privacy Policy from time to time. Any changes will be reflected in the "Effective Date" at the top of this document. We encourage you to review this Privacy Policy periodically to stay informed about how we handle privacy matters.</p>
 
-    <h2 class="font-semibold text-black">5. Contact Us</h2>
+    <h2 class={h2Class}>5. Contact Us</h2>
     <p>If you have any questions or concerns about this Privacy Policy, please contact us at:</p>
     <p>Email: 
         <Link href={`mailto:${mail}`}>{mail}</Link>
