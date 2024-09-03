@@ -42,7 +42,7 @@ const { Content } = await app.render();
       <div class="animate text-2xl font-semibold text-black dark:text-white">
         {app.data.title}
       </div>
-      {(app.data.demoURL || app.data.repoURL) && (
+      <!-- {(app.data.demoURL || app.data.repoURL) && (
         <nav class="animate flex gap-1">
           {app.data.demoURL && (
             <Link href={app.data.demoURL} external>
@@ -58,7 +58,7 @@ const { Content } = await app.render();
             </Link>
           )}
         </nav>
-      )}
+      )} -->
     </div>
     <article class="animate">
       <Content />
