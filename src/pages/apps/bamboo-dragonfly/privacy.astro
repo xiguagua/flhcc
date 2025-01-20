@@ -4,18 +4,12 @@ import Container from "@components/Container.astro"
 import Link from "@components/Link.astro"
 
 export async function getStaticPaths() {
-//   const apps = (await getCollection("apps"))
-//     .filter(post => !post.data.draft)
-//     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
-//   return apps.map((app) => ({
-//     params: { slug: app.slug },
-//     props: app,
-//   }));
     return [
         {params: {app: 'bamboo-dragonfly'}}
     ]
 }
 
+// const { appName:app } = Astro.params
 const { app } = Astro.params
 const effectiveDate = new Date("2024-08-27")
 const mail = "contact@flhcctech.com"
