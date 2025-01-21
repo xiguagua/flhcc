@@ -1,20 +1,59 @@
 ---
-import PageLayout from "@layouts/PageLayout.astro"
-import Container from "@components/Container.astro"
-import Link from "@components/Link.astro"
+import PageLayout from "@layouts/PageLayout.astro";
+import Container from "@components/Container.astro";
+import Link from "@components/Link.astro";
 
 export async function getStaticPaths() {
     return [
-        {params: {app: 'bamboo-dragonfly'}},
-        {params: {app: 'checkup-report'}}
-    ]
+        { params: { app: "bamboo-dragonfly" } },
+        { params: { app: "checkup-report" } },
+    ];
 }
 
 // const { appName:app } = Astro.params
-const { app } = Astro.params
-const effectiveDate = new Date("2024-08-27")
-const mail = "contact@flhcctech.com"
-const h2Class = "font-semibold text-black dark:text-white"
+const { app } = Astro.params;
+const effectiveDate = new Date("2024-08-27");
+const mail = "contact@flhcctech.com";
+const clauses = [
+    {
+        title: "1. No Personal Information Collected",
+        content:
+            "We do not collect any personal information, such as your name, \
+            email address, phone number, or any other personal details. The \
+            App is designed to function without requiring any data that \
+            could be used to identify you as an individual.",
+    },
+    {
+        title: "2. Data Usage",
+        content:
+            "The App may collect anonymous usage data to improve its \
+                functionality and performance. This data does not identify you \
+                and is used solely for analytical purposes to enhance the user \
+                experience.",
+    },
+    {
+        title: "3. Third-Party Services",
+        content:
+            "We do not use any third-party services that collect or process \
+                personal information. If this changes in the future, we will \
+                update our Privacy Policy and notify you accordingly.",
+    },
+    {
+        title: "4. Changes to This Privacy Policy",
+        content:
+            'We may update this Privacy Policy from time to time. Any changes \
+                will be reflected in the "Effective Date" at the top of this \
+                document. We encourage you to review this Privacy Policy \
+                periodically to stay informed about how we handle privacy \
+                matters.',
+    },
+    {
+        title: "5. Contact Us",
+        content:
+            "If you have any questions or concerns about this Privacy Policy, \
+                please contact us at:",
+    },
+];
 ---
 
 <PageLayout title={app} description={app}>
@@ -23,34 +62,38 @@ const h2Class = "font-semibold text-black dark:text-white"
             Privacy of {app}
         </div>
 
-        <div class="animate space-y-2">
-    <p class="text-xs">Effective Date: { effectiveDate.toLocaleDateString() }</p>
+        <div class="animate space-y-6">
+            <p class="text-xs">
+                Effective Date: {effectiveDate.toLocaleDateString()}
+            </p>
 
-    <p>Your privacy is important to us. This Privacy Policy explains how 
-        <span class="font-bold text-black dark:text-white">`{app}`</span> 
-        ("we", "us", or "our") collects, uses, and protects your personal information when you use our mobile application (the "App").
-    </p>
+            <p>
+                Your privacy is important to us. This Privacy Policy explains
+                how
+                <span class="font-bold text-black dark:text-white">`{app}`</span
+                >
+                ("we", "us", or "our") collects, uses, and protects your personal
+                information when you use our mobile application (the "App").
+            </p>
 
-    <h2 class={h2Class}>1. No Personal Information Collected</h2>
-    
-    <p>We do not collect any personal information, such as your name, email address, phone number, or any other personal details. The App is designed to function without requiring any data that could be used to identify you as an individual.</p>
-
-
-    <h2 class={h2Class}>2. Data Usage</h2>
-    <p>The App may collect anonymous usage data to improve its functionality and performance. This data does not identify you and is used solely for analytical purposes to enhance the user experience.</p>
-
-
-    <h2 class={h2Class}>3. Third-Party Services</h2>
-    <p>We do not use any third-party services that collect or process personal information. If this changes in the future, we will update our Privacy Policy and notify you accordingly.</p>
-
-    <h2 class={h2Class}>4. Changes to This Privacy Policy</h2>
-    <p>We may update this Privacy Policy from time to time. Any changes will be reflected in the "Effective Date" at the top of this document. We encourage you to review this Privacy Policy periodically to stay informed about how we handle privacy matters.</p>
-
-    <h2 class={h2Class}>5. Contact Us</h2>
-    <p>If you have any questions or concerns about this Privacy Policy, please contact us at:</p>
-    <p>Email: 
-        <Link href={`mailto:${mail}`}>{mail}</Link>
-    </p>
-</div>
+            <div class="space-y-2">
+                {
+                    clauses.map(({ title, content }) => {
+                        return (
+                            <div>
+                                <h3 class="font-semibold text-black dark:text-white">
+                                    {title}
+                                </h3>
+                                <p>{content}</p>
+                            </div>
+                        );
+                    })
+                }
+                <p>
+                    Email:
+                    <Link href={`mailto:${mail}`}>{mail}</Link>
+                </p>
+            </div>
+        </div>
     </Container>
-  </PageLayout>
+</PageLayout>
