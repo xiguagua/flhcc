@@ -3,25 +3,37 @@ import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
 import Link from "@components/Link.astro";
 
+import { urlPrefix, items } from "./_items.json";
+
 export async function getStaticPaths() {
-    return [
-        { params: { app: "bamboo-dragonfly" } }
-    ];
+  return [{ params: { app: "bamboo-dragonfly" } }];
 }
 
-// const { appName:app } = Astro.params
 const { app } = Astro.params;
-// const effectiveDate = new Date("2024-08-27")
-// const mail = "contact@flhcctech.com"
-// const h2Class = "font-semibold text-black dark:text-white"
 
-const items = [
-  { id: 1, title: 'Astro 教程', description: '学习如何使用 Astro 构建网站' },
-  { id: 2, title: 'JavaScript 基础', description: 'JavaScript 的基本语法和技巧' },
-  { id: 3, title: '前端开发最佳实践', description: '编写高效、可维护的前端代码' },
-];
+// const items = [
+//   { id: 1, title: 'Astro 教程', description: '学习如何使用 Astro 构建网站' },
+//   { id: 2, title: 'JavaScript 基础', description: 'JavaScript 的基本语法和技巧' },
+//   { id: 3, title: '前端开发最佳实践', description: '编写高效、可维护的前端代码' },
+// ];
 ---
 
 <PageLayout title={app} description={app}>
-
+  <Container>
+    <h1 class="text-black dark:text-white text-xl mb-4">🛒 分流规则商店</h1>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-3">
+      {
+        items.map((item) => {
+          const link = `${urlPrefix}/${item.name}/${item.name}.list`;
+          return (
+            <a href={link}>
+              <div class="border border-sky-300 dark:border-sky-800 rounded-md px-3 truncate">
+                {item.name}
+              </div>
+            </a>
+          );
+        })
+      }
+    </div>
+  </Container>
 </PageLayout>
