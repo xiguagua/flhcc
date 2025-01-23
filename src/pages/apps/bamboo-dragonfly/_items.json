@@ -1,0 +1,233 @@
+{
+  "urlPrefix": "https://raw.githubusercontent.com/xiguagua/ios_rule_script/refs/heads/master/rule/Clash",
+  "items": [
+    {
+      "name": "Adobe",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "AliPay",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "AmazonPrimeVideo",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "Anime",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "AppleDaily",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "AppleNews",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "Bloomberg",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "DouBan",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "DouYin",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "Douyu",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "Duckduckgo",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "Duolingo",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "Facebook",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "FanFou",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "FeiZhu",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "Figma",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "GaoDe",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "Gemini",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "GitHub",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "HBO",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "HBOAsia",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "Hearthstone",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "Hulu",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "HuluUSA",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "IMDB",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "JingDong",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "Migu",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "NYTimes",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "NetEaseMusic",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "Shopee",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "Shopify",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "Slack",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "Stripe",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "TikTok",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "Tumblr",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "Twitch",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "Udacity",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "YouTubeMusic",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    }
+  ]
+}
