@@ -74,6 +74,12 @@
       "policy": "proxyGroup"
     },
     {
+      "name": "Emby",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
       "name": "Facebook",
       "format": "text",
       "content": "classical",
