@@ -1,5 +1,5 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
+import { getCollection, getEntry, render } from "astro:content";
 import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
 import FormattedDate from "@components/FormattedDate.astro";
@@ -11,18 +11,25 @@ export async function getStaticPaths() {
   const apps = (await getCollection("apps"))
     .filter(post => !post.data.draft)
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
   return apps.map((app) => ({
-    params: { slug: app.slug },
+    params: { id: app.id },
     props: app,
   }));
 }
-type Props = CollectionEntry<'apps'>;
+// type Props = CollectionEntry<'apps'>;
 
-const app = Astro.props;
-const { Content } = await app.render();
+const params = Astro.params;
+const app = await getEntry('apps', params.id);
+if (!app) {
+  throw new Error(`Could not find ${params.id}`)
+}
+const { Content } = await render(app);
+
+const props = Astro.props;
 ---
 
-<PageLayout title={app.data.title} description={app.data.description}>
+<PageLayout title={props.data.title} description={props.data.description}>
   <Container>
     <div class="animate">
       <BackToPrev href="/apps">
@@ -32,15 +39,15 @@ const { Content } = await app.render();
     <div class="space-y-1 my-10">
       <div class="animate flex items-center gap-1.5">
         <div class="font-base text-sm">
-          <FormattedDate date={app.data.date} />
+          <FormattedDate date={props.data.date} />
         </div>
         &bull;
         <div class="font-base text-sm">
-          {readingTime(app.body)}
+          {props.body && readingTime(props.body)}
         </div>
       </div>
       <div class="animate text-2xl font-semibold text-black dark:text-white">
-        {app.data.title}
+        {props.data.title}
       </div>
       <!-- {(app.data.demoURL || app.data.repoURL) && (
         <nav class="animate flex gap-1">

@@ -125,7 +125,7 @@ const work = await Promise.all(
         <ul class="flex flex-col gap-4">
           {apps.map(app => (
             <li>
-              <ArrowCard entry={app} href={`/${app.collection}/${app.slug}`} appIcon={app.data.appIcon} />
+              <ArrowCard entry={app} href={`/${app.collection}/${app.id}`} appIcon={app.data.appIcon} />
             </li>
           ))}
         </ul>

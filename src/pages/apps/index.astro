@@ -20,7 +20,7 @@ const apps = (await getCollection("apps"))
         {
           apps.map((app) => (
             <li>
-              <ArrowCard entry={app} href={`/${app.collection}/${app.slug}`} appIcon={app.data.appIcon} />
+              <ArrowCard entry={app} href={`/${app.collection}/${app.id}`} appIcon={app.data.appIcon} />
             </li>
           ))
         }
