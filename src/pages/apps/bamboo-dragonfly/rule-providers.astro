@@ -19,14 +19,15 @@ const title = "分流规则商店";
     <div class="animate grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-3">
       {
         items.map((item) => {
-          const url = new URL(`https://www.flhcctech.com/rule-provider/${item.name}`);
-          url.searchParams.set('link', `${urlPrefix}/${item.name}/${item.name}.list`);
+          const name = item.name;
+          const url = new URL(`https://www.flhcctech.com/rule-providers/${name}`);
+          url.searchParams.set('link', `${urlPrefix}/${name}/${name}.list`);
 
           // const link = `${urlPrefix}/${item.name}/${item.name}.list`;
           return (
             <a href={url}>
               <div class="border border-sky-300 dark:border-sky-800 rounded-md px-3 py-1 truncate hover:text-black dark:hover:text-white hover:scale-[1.03] transform transition">
-                {item.name}
+                {name}
               </div>
             </a>
           );
