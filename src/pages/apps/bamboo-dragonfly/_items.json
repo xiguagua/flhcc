@@ -11,7 +11,7 @@
       "name": "AliPay",
       "format": "text",
       "content": "classical",
-      "policy": "proxyGroup"
+      "policy": "direct"
     },
     {
       "name": "AmazonPrimeVideo",
@@ -29,7 +29,7 @@
       "name": "AppleDaily",
       "format": "text",
       "content": "classical",
-      "policy": "proxyGroup"
+      "policy": "direct"
     },
     {
       "name": "AppleNews",
@@ -53,13 +53,13 @@
       "name": "DouYin",
       "format": "text",
       "content": "classical",
-      "policy": "proxyGroup"
+      "policy": "direct"
     },
     {
       "name": "Douyu",
       "format": "text",
       "content": "classical",
-      "policy": "proxyGroup"
+      "policy": "direct"
     },
     {
       "name": "Duckduckgo",
@@ -71,13 +71,13 @@
       "name": "Duolingo",
       "format": "text",
       "content": "classical",
-      "policy": "proxyGroup"
+      "policy": "direct"
     },
     {
       "name": "Emby",
       "format": "text",
       "content": "classical",
-      "policy": "proxyGroup"
+      "policy": "direct"
     },
     {
       "name": "Facebook",
@@ -95,7 +95,7 @@
       "name": "FeiZhu",
       "format": "text",
       "content": "classical",
-      "policy": "proxyGroup"
+      "policy": "direct"
     },
     {
       "name": "Figma",
@@ -107,7 +107,7 @@
       "name": "GaoDe",
       "format": "text",
       "content": "classical",
-      "policy": "proxyGroup"
+      "policy": "direct"
     },
     {
       "name": "Gemini",
@@ -137,7 +137,7 @@
       "name": "Hearthstone",
       "format": "text",
       "content": "classical",
-      "policy": "proxyGroup"
+      "policy": "direct"
     },
     {
       "name": "Hulu",
@@ -161,13 +161,13 @@
       "name": "JingDong",
       "format": "text",
       "content": "classical",
-      "policy": "proxyGroup"
+      "policy": "direct"
     },
     {
       "name": "Migu",
       "format": "text",
       "content": "classical",
-      "policy": "proxyGroup"
+      "policy": "direct"
     },
     {
       "name": "NYTimes",
@@ -179,7 +179,7 @@
       "name": "NetEaseMusic",
       "format": "text",
       "content": "classical",
-      "policy": "proxyGroup"
+      "policy": "direct"
     },
     {
       "name": "Shopee",
