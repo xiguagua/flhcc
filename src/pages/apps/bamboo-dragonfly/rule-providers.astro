@@ -22,6 +22,10 @@ const title = "分流规则商店";
           const name = item.name;
           const link = new URL(`https://link.flhcctech.com/rule-providers/${name}`);
           link.searchParams.set('url', `${urlPrefix}/${name}/${name}.list`);
+          link.searchParams.set('format', item.format);
+          link.searchParams.set('content', item.content);
+          link.searchParams.set('policy', item.policy);
+
 
           // const link = `${urlPrefix}/${item.name}/${item.name}.list`;
           return (
