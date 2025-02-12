@@ -8,7 +8,7 @@
       "policy": "proxyGroup"
     },
     {
-      "name": "AliPay",
+      "name": "AliPay-支付宝",
       "format": "text",
       "content": "classical",
       "policy": "direct"
@@ -26,12 +26,6 @@
       "policy": "proxyGroup"
     },
     {
-      "name": "AppleDaily",
-      "format": "text",
-      "content": "classical",
-      "policy": "direct"
-    },
-    {
       "name": "AppleNews",
       "format": "text",
       "content": "classical",
@@ -44,19 +38,19 @@
       "policy": "proxyGroup"
     },
     {
-      "name": "DouBan",
+      "name": "DouBan-豆瓣",
       "format": "text",
       "content": "classical",
       "policy": "proxyGroup"
     },
     {
-      "name": "DouYin",
+      "name": "DouYin-抖音",
       "format": "text",
       "content": "classical",
       "policy": "direct"
     },
     {
-      "name": "Douyu",
+      "name": "Douyu-斗鱼",
       "format": "text",
       "content": "classical",
       "policy": "direct"
@@ -86,13 +80,13 @@
       "policy": "proxyGroup"
     },
     {
-      "name": "FanFou",
+      "name": "FanFou-饭否",
       "format": "text",
       "content": "classical",
       "policy": "proxyGroup"
     },
     {
-      "name": "FeiZhu",
+      "name": "FeiZhu-飞猪",
       "format": "text",
       "content": "classical",
       "policy": "direct"
@@ -104,7 +98,7 @@
       "policy": "proxyGroup"
     },
     {
-      "name": "GaoDe",
+      "name": "GaoDe-高德",
       "format": "text",
       "content": "classical",
       "policy": "direct"
@@ -158,13 +152,13 @@
       "policy": "proxyGroup"
     },
     {
-      "name": "JingDong",
+      "name": "JingDong-京东",
       "format": "text",
       "content": "classical",
       "policy": "direct"
     },
     {
-      "name": "Migu",
+      "name": "Migu-咪咕",
       "format": "text",
       "content": "classical",
       "policy": "direct"
@@ -176,7 +170,7 @@
       "policy": "proxyGroup"
     },
     {
-      "name": "NetEaseMusic",
+      "name": "NetEaseMusic-网易音乐",
       "format": "text",
       "content": "classical",
       "policy": "direct"
