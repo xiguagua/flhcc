@@ -38,10 +38,22 @@
       "policy": "proxyGroup"
     },
     {
-      "name": "DouBan-豆瓣",
+      "name": "Claude+",
       "format": "text",
       "content": "classical",
       "policy": "proxyGroup"
+    },
+    {
+      "name": "Disney+",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "DouBan-豆瓣",
+      "format": "text",
+      "content": "classical",
+      "policy": "direct"
     },
     {
       "name": "DouYin-抖音",
@@ -152,10 +164,22 @@
       "policy": "proxyGroup"
     },
     {
+      "name": "Instagram+",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
       "name": "JingDong-京东",
       "format": "text",
       "content": "classical",
       "policy": "direct"
+    },
+    {
+      "name": "KKTV",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
     },
     {
       "name": "Migu-咪咕",
@@ -176,6 +200,30 @@
       "policy": "direct"
     },
     {
+      "name": "Netflix+",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "OpenAI+",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "PayPal+",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "Reddit+",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
       "name": "Shopee",
       "format": "text",
       "content": "classical",
@@ -194,7 +242,19 @@
       "policy": "proxyGroup"
     },
     {
+      "name": "Spotify+",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
       "name": "Stripe",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "Telegram+",
       "format": "text",
       "content": "classical",
       "policy": "proxyGroup"
@@ -212,13 +272,25 @@
       "policy": "proxyGroup"
     },
     {
-      "name": "Twitch",
+      "name": "Twitch+",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "Twitter+",
       "format": "text",
       "content": "classical",
       "policy": "proxyGroup"
     },
     {
       "name": "Udacity",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
+      "name": "Whatsapp+",
       "format": "text",
       "content": "classical",
       "policy": "proxyGroup"
