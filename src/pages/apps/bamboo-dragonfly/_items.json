@@ -224,6 +224,12 @@
       "policy": "proxyGroup"
     },
     {
+      "name": "YouTube+",
+      "format": "text",
+      "content": "classical",
+      "policy": "proxyGroup"
+    },
+    {
       "name": "YouTubeMusic",
       "format": "text",
       "content": "classical",

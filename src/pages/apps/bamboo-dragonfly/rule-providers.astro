@@ -24,9 +24,10 @@ function getPrefix(s: string) {
       {
         items.map((item) => {
           const fullName = item.name;
-          const shortName = getPrefix(fullName)
+          const shortName = getPrefix(fullName); // sth before '-'
+          const clearName = shortName.replace(/\+$/, "");
           const link = new URL(`https://link.flhcctech.com/rule-providers/${shortName}`);
-          link.searchParams.set('url', `${urlPrefix}/${shortName}/${shortName}.list`);
+          link.searchParams.set('url', `${urlPrefix}/${clearName}/${clearName}.list`);
           link.searchParams.set('format', item.format);
           link.searchParams.set('content', item.content);
           link.searchParams.set('policy', item.policy);
