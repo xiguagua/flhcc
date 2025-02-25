@@ -1,6 +1,8 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
 
 html {
   overflow-y: scroll;
@@ -39,21 +41,19 @@ footer {
   @apply py-5 text-sm;
 }
 
-article {
-  @apply max-w-full prose dark:prose-invert prose-img:mx-auto prose-img:my-auto;
-  @apply prose-headings:font-semibold prose-p:font-serif;
-  @apply prose-headings:text-black prose-headings:dark:text-white;
-}
 
-@layer utilities {
-  article a {
-    @apply font-sans text-current underline underline-offset-2;
-    @apply decoration-black/15 dark:decoration-white/30;
-    @apply transition-colors duration-300 ease-in-out;
+
+@layer base {
+  article {
+    @apply max-w-full prose dark:prose-invert prose-img:mx-auto prose-img:my-auto;
+    @apply prose-headings:font-semibold;
+    @apply prose-headings:text-black prose-headings:dark:text-white;
   }
-  article a:hover {
-    @apply text-black dark:text-white;
-    @apply decoration-black/25 dark:decoration-white/50;
+
+  article a {
+    @apply font-sans text-current underline underline-offset-3;
+    @apply decoration-red-400 dark:decoration-orange-500;
+    @apply transition-colors duration-300 ease-in-out;
   }
 }
 
