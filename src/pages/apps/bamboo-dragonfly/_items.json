@@ -1,311 +1,360 @@
 {
   "urlPrefix": "https://raw.githubusercontent.com/xiguagua/ios_rule_script/refs/heads/master/rule/Clash",
-  "items": [
-    {
-      "name": "Adobe",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "AliPay-支付宝",
-      "format": "text",
-      "content": "classical",
-      "policy": "direct"
-    },
-    {
-      "name": "AmazonPrimeVideo",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "Anime",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "AppleNews",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "Bloomberg",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "Claude+",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "Disney+",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "DouBan-豆瓣",
-      "format": "text",
-      "content": "classical",
-      "policy": "direct"
-    },
-    {
-      "name": "DouYin-抖音",
-      "format": "text",
-      "content": "classical",
-      "policy": "direct"
-    },
-    {
-      "name": "Douyu-斗鱼",
-      "format": "text",
-      "content": "classical",
-      "policy": "direct"
-    },
-    {
-      "name": "Duckduckgo",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "Duolingo",
-      "format": "text",
-      "content": "classical",
-      "policy": "direct"
-    },
-    {
-      "name": "Emby",
-      "format": "text",
-      "content": "classical",
-      "policy": "direct"
-    },
-    {
-      "name": "Facebook",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "FanFou-饭否",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "FeiZhu-飞猪",
-      "format": "text",
-      "content": "classical",
-      "policy": "direct"
-    },
-    {
-      "name": "Figma",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "GaoDe-高德",
-      "format": "text",
-      "content": "classical",
-      "policy": "direct"
-    },
-    {
-      "name": "Gemini",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "GitHub",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "HBO",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "HBOAsia",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "Hearthstone",
-      "format": "text",
-      "content": "classical",
-      "policy": "direct"
-    },
-    {
-      "name": "Hulu",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "HuluUSA",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "IMDB",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "Instagram+",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "JingDong-京东",
-      "format": "text",
-      "content": "classical",
-      "policy": "direct"
-    },
-    {
-      "name": "KKTV",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "Migu-咪咕",
-      "format": "text",
-      "content": "classical",
-      "policy": "direct"
-    },
-    {
-      "name": "NYTimes",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "NetEaseMusic-网易音乐",
-      "format": "text",
-      "content": "classical",
-      "policy": "direct"
-    },
-    {
-      "name": "Netflix+",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "OpenAI+",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "PayPal+",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "Reddit+",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "Shopee",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "Shopify",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "Slack",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "Spotify+",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "Stripe",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "Telegram+",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "TikTok",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "Tumblr",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "Twitch+",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "Twitter+",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "Udacity",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "Whatsapp+",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "YouTube+",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    },
-    {
-      "name": "YouTubeMusic",
-      "format": "text",
-      "content": "classical",
-      "policy": "proxyGroup"
-    }
-  ]
+  "items": {
+    "world": [
+      {
+        "name": "Adobe",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      
+      {
+        "name": "AmazonPrimeVideo",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      {
+        "name": "Anime",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      {
+        "name": "AppleNews",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      {
+        "name": "Bloomberg",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      {
+        "name": "Claude+",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      {
+        "name": "Disney+",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      
+      
+      {
+        "name": "Duckduckgo",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      {
+        "name": "Duolingo",
+        "format": "text",
+        "content": "classical",
+        "policy": "direct"
+      },
+      {
+        "name": "Emby",
+        "format": "text",
+        "content": "classical",
+        "policy": "direct"
+      },
+      {
+        "name": "Facebook",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      
+      {
+        "name": "Figma",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      
+      {
+        "name": "Gemini",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      {
+        "name": "GitHub",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      {
+        "name": "HBO",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      {
+        "name": "HBOAsia",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      {
+        "name": "Hearthstone",
+        "format": "text",
+        "content": "classical",
+        "policy": "direct"
+      },
+      {
+        "name": "Hulu",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      {
+        "name": "HuluUSA",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      {
+        "name": "IMDB",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      {
+        "name": "Instagram+",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      
+      {
+        "name": "KKTV",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      
+      {
+        "name": "NYTimes",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      
+      {
+        "name": "Netflix+",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      {
+        "name": "OpenAI+",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      {
+        "name": "PayPal+",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      {
+        "name": "Reddit+",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      {
+        "name": "Shopee",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      {
+        "name": "Shopify",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      {
+        "name": "Slack",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      {
+        "name": "Spotify+",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      {
+        "name": "Stripe",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      {
+        "name": "Telegram+",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      {
+        "name": "TikTok",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      {
+        "name": "Tumblr",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      {
+        "name": "Twitch+",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      {
+        "name": "Twitter+",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      {
+        "name": "Udacity",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      {
+        "name": "Whatsapp+",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      {
+        "name": "YouTube+",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      {
+        "name": "YouTubeMusic",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      }
+    ],
+    "cn": [
+      {
+        "name": "AliPay-支付宝",
+        "format": "text",
+        "content": "classical",
+        "policy": "direct"
+      },
+      {
+        "name": "BiliBili-哔哩哔哩",
+        "format": "text",
+        "content": "classical",
+        "policy": "direct"
+      },
+      {
+        "name": "DouBan-豆瓣",
+        "format": "text",
+        "content": "classical",
+        "policy": "direct"
+      },
+      {
+        "name": "DouYin-抖音",
+        "format": "text",
+        "content": "classical",
+        "policy": "direct"
+      },
+      {
+        "name": "Douyu-斗鱼",
+        "format": "text",
+        "content": "classical",
+        "policy": "direct"
+      },
+      {
+        "name": "FanFou-饭否",
+        "format": "text",
+        "content": "classical",
+        "policy": "direct"
+      },
+      {
+        "name": "FeiZhu-飞猪",
+        "format": "text",
+        "content": "classical",
+        "policy": "direct"
+      },
+      {
+        "name": "GaoDe-高德",
+        "format": "text",
+        "content": "classical",
+        "policy": "direct"
+      },
+      {
+        "name": "iQIYI-爱奇艺",
+        "format": "text",
+        "content": "classical",
+        "policy": "direct"
+      },
+      {
+        "name": "JingDong-京东",
+        "format": "text",
+        "content": "classical",
+        "policy": "direct"
+      },
+      {
+        "name": "KuaiShou-快手",
+        "format": "text",
+        "content": "classical",
+        "policy": "direct"
+      },
+      {
+        "name": "Migu-咪咕",
+        "format": "text",
+        "content": "classical",
+        "policy": "direct"
+      },
+      {
+        "name": "NetEaseMusic-网易音乐",
+        "format": "text",
+        "content": "classical",
+        "policy": "direct"
+      },
+      {
+        "name": "TencentVideo-腾讯视频",
+        "format": "text",
+        "content": "classical",
+        "policy": "direct"
+      },
+      {
+        "name": "Weibo-微博",
+        "format": "text",
+        "content": "classical",
+        "policy": "direct"
+      },
+      {
+        "name": "Youku-优酷",
+        "format": "text",
+        "content": "classical",
+        "policy": "direct"
+      }
+    ]
+    
+  }
 }
