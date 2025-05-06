@@ -19,10 +19,10 @@ function getPrefix(s: string) {
 
 <PageLayout title={title} description={title}>
   <Container>
-    <h1 class="text-black dark:text-white text-xl mb-6">🛒 分流规则商店 v0.8</h1>
+    <h1 class="text-black dark:text-white text-xl font-medium mb-6">🛒 分流规则商店 v0.8</h1>
     <div class="flex flex-col space-y-5">
       <div>
-        <h2 class="text-black dark:text-white text-md mb-2">WORLD:</h2>
+        <h2 class="text-black dark:text-white text-md font-medium mb-2">WORLD:</h2>
         <div class="animate grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-3">
           {
             items.world.map((item) => {
@@ -47,7 +47,7 @@ function getPrefix(s: string) {
         </div>
       </div>
       <div>
-        <h2 class="text-black dark:text-white text-md mb-2">CN:</h2>
+        <h2 class="text-black dark:text-white text-md font-medium mb-2">CN:</h2>
         <div class="animate grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-3">
           {
             items.cn.map((item) => {
