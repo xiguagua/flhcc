@@ -28,6 +28,12 @@
         "policy": "proxyGroup"
       },
       {
+        "name": "AppStore",
+        "format": "text",
+        "content": "classical",
+        "policy": "direct"
+      },
+      {
         "name": "Bloomberg",
         "format": "text",
         "content": "classical",
