@@ -179,6 +179,12 @@
         "policy": "proxyGroup"
       },
       {
+        "name": "PlayStation",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      {
         "name": "Reddit+",
         "format": "text",
         "content": "classical",
