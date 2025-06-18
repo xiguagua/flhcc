@@ -161,6 +161,12 @@
         "policy": "proxyGroup"
       },
       {
+        "name": "Nintendo",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      {
         "name": "OpenAI+",
         "format": "text",
         "content": "classical",
