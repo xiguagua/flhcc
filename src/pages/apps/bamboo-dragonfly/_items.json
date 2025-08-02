@@ -367,6 +367,12 @@
         "policy": "direct"
       },
       {
+        "name": "XiaoHongShu-小红书",
+        "format": "text",
+        "content": "classical",
+        "policy": "direct"
+      }
+      {
         "name": "Youku-优酷",
         "format": "text",
         "content": "classical",
