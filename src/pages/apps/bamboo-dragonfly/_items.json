@@ -185,7 +185,7 @@
         "policy": "proxyGroup"
       },
       {
-        "name": "Podcasts",
+        "name": "Podcasts+",
         "format": "text",
         "content": "classical",
         "policy": "proxyGroup"
