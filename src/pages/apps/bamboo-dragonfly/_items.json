@@ -355,6 +355,12 @@
         "policy": "direct"
       },
       {
+        "name": "PCDN",
+        "format": "text",
+        "content": "classical",
+        "policy": "reject"
+      },
+      {
         "name": "TencentVideo-腾讯视频",
         "format": "text",
         "content": "classical",
