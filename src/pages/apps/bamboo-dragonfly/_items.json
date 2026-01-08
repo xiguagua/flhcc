@@ -146,7 +146,12 @@
         "content": "classical",
         "policy": "proxyGroup"
       },
-      
+      {
+        "name": "Line",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
       {
         "name": "NYTimes",
         "format": "text",
