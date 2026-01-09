@@ -98,6 +98,18 @@
         "policy": "proxyGroup"
       },
       {
+        "name": "Google",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      {
+        "name": "GoogleDrive",
+        "format": "text",
+        "content": "classical",
+        "policy": "proxyGroup"
+      },
+      {
         "name": "HBO",
         "format": "text",
         "content": "classical",
