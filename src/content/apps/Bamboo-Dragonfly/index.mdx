@@ -1,11 +1,24 @@
 ---
-title: "Bamboo Dragonfly (竹蜻蜓)"
-description: "Minimal portfolio and blog build with astro and no frameworks."
+title: "Bamboo Dragonfly - Clash Client for iOS & tvOS | 竹蜻蜓"
+description: "Bamboo Dragonfly (竹蜻蜓) is a user-friendly Clash client for iOS, iPadOS, and tvOS. Secure your internet connection with ease. Based on open-source Clash core."
 date: "Jan 02 2026"
 # demoURL: "https://astro-nano-demo.vercel.app"
 # repoURL: "https://github.com/markhorn-dev/astro-nano"
 appURL: "https://apps.apple.com/us/app/bamboo-dragonfly/id6473621095"
 appIcon: "/src/assets/bamboo-dragonfly.png"
+keywords:
+  - "Clash"
+  - "VPN"
+  - "Proxy"
+  - "iOS"
+  - "iPadOS"
+  - "tvOS"
+  - "Network Tool"
+  - "Bamboo Dragonfly"
+  - "竹蜻蜓"
+  - "科学上网"
+  - "代理"
+  - "Mihomo"
 ---
 import { YouTube } from 'astro-embed';
 
@@ -17,26 +30,55 @@ import { YouTube } from 'astro-embed';
 <YouTube class="border-4 rounded-xl border-amber-300" id="https://youtube.com/shorts/TT6-Hn_EN10" title="竹蜻蜓(iOS)" />  
 
 ### 免费下载
-<div class="flex flex-row flex-nowrap items-center gap-3">
-<div class="w-1/3 max-w-40">
-  <a class="box-content" href="https://apps.apple.com/us/app/bamboo-dragonfly/id6473621095">
-    <img src="/download-appstore.png" alt="下载"/>
+<div class="flex flex-col sm:flex-row items-center gap-4 not-prose">
+  <a href="https://apps.apple.com/us/app/bamboo-dragonfly/id6473621095" class="w-44 h-[54px] no-underline flex items-center justify-center transition-opacity hover:opacity-80">
+    <img src="/download-appstore.png" alt="Download on App Store" class="w-full h-full object-contain" />
   </a>
-</div>
-<span>or</span>
-<span>
-  <a href="/apps/bamboo-dragonfly/rule-providers">🛒 分流规则商店</a>
-</span>
+  
+  <a href="/apps/bamboo-dragonfly/rule-providers" class="w-44 h-[54px] box-border no-underline group flex items-center justify-center gap-2 rounded-xl bg-transparent text-black/80 dark:text-white border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 transition-all">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-80"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+    <span class="font-medium text-sm text-black/80 dark:text-white">分流规则商店</span>
+  </a>
 </div>
 
 ### 特点
-- 💲 基础功能免费！！！
-- 🛠️ 易上手/低配置。无需理解复杂的网络术语，简单三步即可隐藏上网痕迹
-- 🔋 自带分流商店。按需添加，整洁有序
-- ‼️ mihomo + clash-rs 双核心。Rust 的高效与 Mihomo 的全能一起带给你
-- ✈️ 同时启用多个机场订阅。节点按 「国家/地域」 整合命名，方便切换
-- 🗺️ 引入地图元素。提供沉浸式体验
-- ★ 支持iOS、iPadOS 和 tvOS。透过 icloud 自动同步订阅信息
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 not-prose">
+  <div class="p-4 rounded-xl bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/10">
+    <div class="text-2xl mb-2">💲</div>
+    <h4 class="font-bold text-black dark:text-white mb-1">免费起步</h4>
+    <p class="text-sm text-black/70 dark:text-white/70">基础功能完全免费，无门槛体验，无需担心隐形消费。</p>
+  </div>
+  <div class="p-4 rounded-xl bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/10">
+    <div class="text-2xl mb-2">🛠️</div>
+    <h4 class="font-bold text-black dark:text-white mb-1">简单易用</h4>
+    <p class="text-sm text-black/70 dark:text-white/70">告别复杂术语，无需专业知识，简单三步即可隐藏上网痕迹。</p>
+  </div>
+  <div class="p-4 rounded-xl bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/10">
+    <div class="text-2xl mb-2">🔋</div>
+    <h4 class="font-bold text-black dark:text-white mb-1">规则商店</h4>
+    <p class="text-sm text-black/70 dark:text-white/70">内置分流规则商店，按需一键添加，保持配置整洁有序。</p>
+  </div>
+  <div class="p-4 rounded-xl bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/10">
+    <div class="text-2xl mb-2">✈️</div>
+    <h4 class="font-bold text-black dark:text-white mb-1">智能聚合</h4>
+    <p class="text-sm text-black/70 dark:text-white/70">支持多订阅同时启用，按「国家/地域」自动整合节点，切换更方便。</p>
+  </div>
+  <div class="p-4 rounded-xl bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/10">
+    <div class="text-2xl mb-2">⚡</div>
+    <h4 class="font-bold text-black dark:text-white mb-1">双核驱动</h4>
+    <p class="text-sm text-black/70 dark:text-white/70">集成 mihomo + clash-rs 双核心，兼顾 Rust 的高效与 Mihomo 的全能。</p>
+  </div>
+  <div class="p-4 rounded-xl bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/10">
+    <div class="text-2xl mb-2">🗺️</div>
+    <h4 class="font-bold text-black dark:text-white mb-1">地图可视化</h4>
+    <p class="text-sm text-black/70 dark:text-white/70">引入地图元素，直观展示节点分布，提供沉浸式的网络体验。</p>
+  </div>
+  <div class="p-4 rounded-xl bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/10 sm:col-span-2">
+    <div class="text-2xl mb-2">🔄</div>
+    <h4 class="font-bold text-black dark:text-white mb-1">全生态同步</h4>
+    <p class="text-sm text-black/70 dark:text-white/70">完美支持 iOS、iPadOS 和 tvOS，通过 iCloud 自动同步订阅与配置。</p>
+  </div>
+</div>
 
 ### FAQ
 - 哪里可以获得机场订阅？

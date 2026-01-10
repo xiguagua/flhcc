@@ -30,7 +30,7 @@ const appdata = app.data;
 // const app = Astro.props;
 ---
 
-<PageLayout title={appdata.title} description={appdata.description}>
+<PageLayout title={appdata.title} description={appdata.description} image={appdata.appIcon} keywords={appdata.keywords}>
   <Container>
     <div class="animate">
       <BackToPrev href="/apps"> Back to apps </BackToPrev>

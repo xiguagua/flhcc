@@ -8,49 +8,61 @@ import { dateRange } from "@lib/utils";
 import { SITE, HOME, SOCIALS } from "@consts";
 
 const blog = (await getCollection("blog"))
-  .filter(post => !post.data.draft)
+  .filter((post) => !post.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0,SITE.NUM_POSTS_ON_HOMEPAGE);
+  .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE);
 
 const apps = (await getCollection("apps"))
-  .filter(app => !app.data.draft)
+  .filter((app) => !app.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0,SITE.NUM_PROJECTS_ON_HOMEPAGE);
+  .slice(0, SITE.NUM_PROJECTS_ON_HOMEPAGE);
 
 const allwork = (await getCollection("work"))
-  .sort((a, b) => new Date(b.data.dateStart).valueOf() - new Date(a.data.dateStart).valueOf())
-  .slice(0,SITE.NUM_WORKS_ON_HOMEPAGE);
+  .sort(
+    (a, b) =>
+      new Date(b.data.dateStart).valueOf() -
+      new Date(a.data.dateStart).valueOf(),
+  )
+  .slice(0, SITE.NUM_WORKS_ON_HOMEPAGE);
 
 const work = await Promise.all(
   allwork.map(async (item) => {
     const { Content } = await item.render();
     return { ...item, Content };
-  })
+  }),
 );
-
 ---
 
 <PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
   <Container>
     <h4 class="animate font-semibold text-black dark:text-white">
-      Hi, Visitor <span class="text-xl">😎</span> 
+      Hi, Visitor <span class="text-xl">👋</span>
     </h4>
     <div class="space-y-16">
       <section>
         <article class="space-y-4">
           <p class="animate">
-            At Flhcc Tech, LLC, we established our company in July 2024 in Delaware, USA. 
-            We specialize in developing high-quality iOS applications for the Apple App Store, 
-            focusing on areas such as VPN, networking, and security. 
-            Our mission is to provide global users with secure, reliable, and efficient mobile application solutions 
-            through our innovative technology and exceptional user experiences.
-            <!-- <Link href="https://github.com/markhorn-dev/astro-sphere" aria-label="Astro Sphere on Github" external>
-              Astro Sphere
-            </Link>.
-            I have a lighthouse scores of 100 across the board for performance, 
-            accesibility, best practices and SEO. -->
+            I am <b>CC</b> — independent iOS developer & founder of <b
+              >Flhcc Tech</b
+            >。
           </p>
-          <!-- <p class="animate">
+          <p class="animate">
+            Building native <strong>iOS</strong>, <strong>iPadOS</strong>, and <strong
+              >tvOS</strong
+            > apps for the <strong>Apple App Store</strong>.
+          </p>
+          <p class="animate">
+            Focused on <strong>VPN</strong>, <strong
+              >networking protocols</strong
+            >, and
+            <strong>system security</strong>.
+          </p>
+          <p class="animate">
+            Working on: <strong>Bamboo Dragonfly</strong>
+          </p>
+        </article>
+      </section>
+      <!-- <p class="animate">
             I come packed with full type safety, a sitemap, an rss feed, markdown 
             and mdx support (use components in your markdown) through astro integrations.
             I am styled with tailwind and come preconfigured with light, dark and 
@@ -63,75 +75,29 @@ const work = await Promise.all(
             </Link>
             to fork the repository, read the docs or one-click deploy on Vercel or Netlify. 
           </p> -->
-        </article>
-      </section>
+    </div>
 
-      <!-- <section class="animate space-y-6">
-        <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h5 class="font-semibold text-black dark:text-white">
-            Latest posts
-          </h5>
-          <Link href="/blog">
-            See all posts
-          </Link>
-        </div>
-        <ul class="flex flex-col gap-4">
-          {blog.map(post => (
+    <section class="animate space-y-6">
+      <div class="flex flex-wrap gap-y-2 items-center justify-between">
+        <h5 class="font-semibold text-black dark:text-white">Recent apps</h5>
+      </div>
+      <ul class="flex flex-col gap-4">
+        {
+          apps.map((app) => (
             <li>
-              <ArrowCard entry={post} href={`/${post.collection}/${post.slug}`}/>
+              <ArrowCard
+                entry={app}
+                href={`/${app.collection}/${app.id}`}
+                appIcon={app.data.appIcon}
+              />
             </li>
-          ))}
-        </ul>
-      </section> -->
+          ))
+        }
+      </ul>
+    </section>
+  </Container>
 
-      <!-- <section class="animate space-y-6">
-        <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h5 class="font-semibold text-black dark:text-white">
-            Work Experience
-          </h5>
-          <Link href="/work">
-            See all work
-          </Link>
-        </div>
-        <ul class="flex flex-col space-y-4">
-          {work.map(entry => (
-            <li>
-              <div class="text-sm opacity-75">
-                {dateRange(entry.data.dateStart, entry.data.dateEnd)}
-              </div>
-              <div class="font-semibold text-black dark:text-white">
-                {entry.data.company}
-              </div>
-              <div class="text-sm opacity-75">
-                {entry.data.role}
-              </div>
-              <article>
-                <entry.Content />
-              </article>
-            </li>
-          ))}
-        </ul>
-      </section> -->
-
-      <section class="animate space-y-6">
-        <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h5 class="font-semibold text-black dark:text-white">
-            Recent apps
-          </h5>
-          <!-- <Link href="/projects">
-            See all projects
-          </Link> -->
-        </div>
-        <ul class="flex flex-col gap-4">
-          {apps.map(app => (
-            <li>
-              <ArrowCard entry={app} href={`/${app.collection}/${app.id}`} appIcon={app.data.appIcon} />
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <!-- <section class="animate space-y-4">
+  <!-- <section class="animate space-y-4">
         <h5 class="font-semibold text-black dark:text-white">
           Let's Connect
         </h5>
@@ -157,6 +123,4 @@ const work = await Promise.all(
           </li>
         </ul>
       </section> -->
-    </div>
-  </Container>
 </PageLayout>

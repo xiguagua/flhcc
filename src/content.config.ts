@@ -33,6 +33,7 @@ const apps = defineCollection({
     repoURL: z.string().optional(),
     appURL: z.string(),
     appIcon: z.string(),
+    keywords: z.array(z.string()).optional(),
   }),
 });
 
