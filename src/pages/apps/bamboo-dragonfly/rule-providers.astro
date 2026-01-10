@@ -10,20 +10,38 @@ const title = "分流规则商店";
 function getPrefix(s: string) {
     return s.split('-')[0];
 }
-// const items = [
-//   { id: 1, title: 'Astro 教程', description: '学习如何使用 Astro 构建网站' },
-//   { id: 2, title: 'JavaScript 基础', description: 'JavaScript 的基本语法和技巧' },
-//   { id: 3, title: '前端开发最佳实践', description: '编写高效、可维护的前端代码' },
-// ];
 ---
 
 <PageLayout title={title} description={title}>
   <Container>
-    <h1 class="text-black dark:text-white text-xl font-medium mb-6">🛒 分流规则商店 v1.1</h1>
+    <div class="flex justify-between items-center mb-6">
+        <h1 class="text-black dark:text-white text-xl font-semibold">🛒 分流规则商店 v1.1</h1>
+        <button id="search-toggle" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors" aria-label="Toggle Search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-black dark:text-white">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.3-4.3"></path>
+            </svg>
+        </button>
+    </div>
+    
+    <div id="search-container" class="mb-6 relative hidden">
+      <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+        </svg>
+      </div>
+      <input 
+        type="text" 
+        id="search-input" 
+        class="block w-full p-3 ps-10 text-sm text-gray-900 border border-black/5 dark:border-white/10 rounded-2xl bg-white/50 dark:bg-white/10 backdrop-blur-md focus:ring-black/20 focus:border-black/20 dark:focus:ring-white/20 dark:focus:border-white/20 dark:placeholder-gray-400 dark:text-white focus:outline-none transition-colors" 
+        placeholder="搜索规则..." 
+      />
+    </div>
+
     <div class="flex flex-col space-y-5">
-      <div>
-        <h2 class="text-black dark:text-white text-md font-medium mb-2">WORLD:</h2>
-        <div class="animate grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-3">
+      <div class="provider-section">
+        <h2 class="text-black dark:text-white text-md font-semibold mb-2">WORLD:</h2>
+        <div class="animate grid grid-cols-2 sm:grid-cols-3 gap-3">
           {
             items.world.map((item) => {
               const fullName = item.name;
@@ -36,8 +54,8 @@ function getPrefix(s: string) {
               link.searchParams.set('policy', item.policy);
     
               return (
-                <a href={link}>
-                  <div class="text-black/70 dark:text-white/80 border border-sky-300 dark:border-sky-700 rounded-md bg-white dark:bg-black px-3 py-1 truncate hover:scale-[1.03] transform transition">
+                <a href={link} class="provider-card" data-name={fullName.toLowerCase()}>
+                  <div class="text-neutral-700 dark:text-neutral-300 border border-black/5 dark:border-white/10 rounded-2xl bg-white/50 dark:bg-white/10 backdrop-blur-md px-3 py-3 text-sm truncate hover:scale-[1.02] hover:bg-white/80 dark:hover:bg-white/20 active:scale-95 transform transition">
                     {fullName}
                   </div>
                 </a>
@@ -46,9 +64,9 @@ function getPrefix(s: string) {
           }
         </div>
       </div>
-      <div>
-        <h2 class="text-black dark:text-white text-md font-medium mb-2">CN:</h2>
-        <div class="animate grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-3">
+      <div class="provider-section">
+        <h2 class="text-black dark:text-white text-md font-semibold mb-2">CN:</h2>
+        <div class="animate grid grid-cols-2 sm:grid-cols-3 gap-3">
           {
             items.cn.map((item) => {
               const fullName = item.name;
@@ -61,8 +79,8 @@ function getPrefix(s: string) {
               link.searchParams.set('policy', item.policy);
     
               return (
-                <a href={link}>
-                  <div class="text-black/70 dark:text-white/80 border border-sky-300 dark:border-sky-700 rounded-md bg-white dark:bg-black px-3 py-1 truncate hover:scale-[1.03] transform transition">
+                <a href={link} class="provider-card" data-name={fullName.toLowerCase()}>
+                  <div class="text-neutral-700 dark:text-neutral-300 border border-black/5 dark:border-white/10 rounded-2xl bg-white/50 dark:bg-white/10 backdrop-blur-md px-3 py-3 text-sm truncate hover:scale-[1.02] hover:bg-white/80 dark:hover:bg-white/20 active:scale-95 transform transition">
                     {fullName}
                   </div>
                 </a>
@@ -73,6 +91,64 @@ function getPrefix(s: string) {
       </div>
     </div>
     
-    
   </Container>
 </PageLayout>
+
+<script>
+  function initSearch() {
+    const searchInput = document.getElementById('search-input') as HTMLInputElement;
+    const searchContainer = document.getElementById('search-container');
+    const searchToggle = document.getElementById('search-toggle');
+    const sections = document.querySelectorAll('.provider-section');
+
+    if (searchToggle && searchContainer && searchInput) {
+      // Remove existing listeners to avoid duplicates if any
+      const newToggle = searchToggle.cloneNode(true);
+      searchToggle.parentNode?.replaceChild(newToggle, searchToggle);
+      
+      const newInput = searchInput.cloneNode(true);
+      searchInput.parentNode?.replaceChild(newInput, searchInput);
+
+      // Re-select elements after cloning
+      const finalToggle = document.getElementById('search-toggle');
+      const finalInput = document.getElementById('search-input') as HTMLInputElement;
+
+      finalToggle?.addEventListener('click', () => {
+        searchContainer.classList.toggle('hidden');
+        if (!searchContainer.classList.contains('hidden')) {
+          setTimeout(() => finalInput.focus(), 100);
+        }
+      });
+
+      finalInput?.addEventListener('input', (e) => {
+        const term = (e.target as HTMLInputElement).value.toLowerCase();
+        
+        sections.forEach(section => {
+          const cards = section.querySelectorAll('.provider-card');
+          let hasVisibleCards = false;
+
+          cards.forEach(card => {
+              const el = card as HTMLElement;
+              const name = el.dataset.name || '';
+              
+              if (name.includes(term)) {
+                  el.style.display = '';
+                  hasVisibleCards = true;
+              } else {
+                  el.style.display = 'none';
+              }
+          });
+
+          // Toggle section visibility
+          (section as HTMLElement).style.display = hasVisibleCards ? '' : 'none';
+        });
+      });
+    }
+  }
+
+  // Run on initial load
+  initSearch();
+
+  // Run on view transitions navigation
+  document.addEventListener('astro:page-load', initSearch);
+</script>
