@@ -33,7 +33,7 @@ function getPrefix(s: string) {
       <input 
         type="text" 
         id="search-input" 
-        class="block w-full p-3 ps-10 text-base text-gray-900 border border-black/5 dark:border-white/10 rounded-2xl bg-white/50 dark:bg-white/10 backdrop-blur-md focus:ring-black/20 focus:border-black/20 dark:focus:ring-white/20 dark:focus:border-white/20 dark:placeholder-gray-400 dark:text-white focus:outline-none transition-colors" 
+        class="block w-full py-2.5 ps-10 pe-3 text-base text-gray-900 border border-black/5 dark:border-white/10 rounded-2xl bg-white/50 dark:bg-white/10 backdrop-blur-md focus:ring-black/20 focus:border-black/20 dark:focus:ring-white/20 dark:focus:border-white/20 dark:placeholder-gray-400 dark:text-white focus:outline-none transition-colors" 
         placeholder="搜索规则..." 
       />
     </div>
@@ -102,53 +102,57 @@ function getPrefix(s: string) {
     const sections = document.querySelectorAll('.provider-section');
 
     if (searchToggle && searchContainer && searchInput) {
-      // Remove existing listeners to avoid duplicates if any
+      // 使用 cloneNode(true) 替换元素以清除所有旧的事件监听器
+      // 这是处理 View Transitions 导致重复绑定的最稳健方法
       const newToggle = searchToggle.cloneNode(true);
       searchToggle.parentNode?.replaceChild(newToggle, searchToggle);
       
       const newInput = searchInput.cloneNode(true);
       searchInput.parentNode?.replaceChild(newInput, searchInput);
 
-      // Re-select elements after cloning
+      // 重新获取替换后的元素引用
       const finalToggle = document.getElementById('search-toggle');
       const finalInput = document.getElementById('search-input') as HTMLInputElement;
 
-      finalToggle?.addEventListener('click', () => {
-        searchContainer.classList.toggle('hidden');
-        if (!searchContainer.classList.contains('hidden')) {
-          setTimeout(() => finalInput.focus(), 100);
-        }
-      });
-
-      finalInput?.addEventListener('input', (e) => {
-        const term = (e.target as HTMLInputElement).value.toLowerCase();
-        
-        sections.forEach(section => {
-          const cards = section.querySelectorAll('.provider-card');
-          let hasVisibleCards = false;
-
-          cards.forEach(card => {
-              const el = card as HTMLElement;
-              const name = el.dataset.name || '';
-              
-              if (name.includes(term)) {
-                  el.style.display = '';
-                  hasVisibleCards = true;
-              } else {
-                  el.style.display = 'none';
-              }
-          });
-
-          // Toggle section visibility
-          (section as HTMLElement).style.display = hasVisibleCards ? '' : 'none';
+      if (finalToggle && finalInput) {
+        finalToggle.addEventListener('click', (e) => {
+            e.preventDefault(); // 防止可能的默认行为
+            const isHidden = searchContainer.classList.toggle('hidden');
+            if (!isHidden) {
+              finalInput.focus();
+            }
         });
-      });
+
+        finalInput.addEventListener('input', (e) => {
+          const term = (e.target as HTMLInputElement).value.toLowerCase();
+          
+          sections.forEach(section => {
+            const cards = section.querySelectorAll('.provider-card');
+            let hasVisibleCards = false;
+
+            cards.forEach(card => {
+                const el = card as HTMLElement;
+                const name = el.dataset.name || '';
+                
+                if (name.includes(term)) {
+                    el.style.display = '';
+                    hasVisibleCards = true;
+                } else {
+                    el.style.display = 'none';
+                }
+            });
+
+            // 切换章节显示状态
+            (section as HTMLElement).style.display = hasVisibleCards ? '' : 'none';
+          });
+        });
+      }
     }
   }
 
-  // Run on initial load
+  // 立即运行一次（针对硬刷新）
   initSearch();
 
-  // Run on view transitions navigation
+  // 监听 Astro 页面加载事件（针对软导航）
   document.addEventListener('astro:page-load', initSearch);
 </script>
