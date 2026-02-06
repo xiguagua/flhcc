@@ -1,24 +1,27 @@
 ---
+import { getCollection } from "astro:content";
 import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
 import Link from "@components/Link.astro";
 
 export async function getStaticPaths() {
-    return [
-        { params: { app: "bamboo-dragonfly" } },
-        { params: { app: "checkup-report" } },
-    ];
+  const apps = await getCollection("apps");
+  return apps.map((app) => ({
+    params: { id: app.id },
+    props: { title: app.data.title },
+  }));
 }
 
-const { app } = Astro.params;
+const { id } = Astro.params;
+const { title } = Astro.props;
 const effectiveDate = new Date("2024-08-27");
 const mail = "contact@flhcctech.com";
 ---
 
-<PageLayout title={app} description={app}>
+<PageLayout title={`Terms of Use - ${title}`} description={`Terms of Use for ${title}`}>
     <Container>
         <div class="font-bold text-2xl text-black dark:text-white">
-            Terms of Use at {app}
+            Terms of Use at {title}
         </div>
 
         <div class="animate space-y-6">
@@ -26,10 +29,10 @@ const mail = "contact@flhcctech.com";
                 Effective Date: {effectiveDate.toLocaleDateString()}
             </p>
             <p>
-                Welcome to our mobile application 
-                <span class="font-bold text-black dark:text-white">`{app}`</span>. 
+                Welcome to our mobile application
+                <span class="font-bold text-black dark:text-white">`{title}`</span>.
                 By accessing or
-                using the App, you agree to be bound by these Terms of Use. 
+                using the App, you agree to be bound by these Terms of Use.
                 Please read these Terms carefully before using the
                 App. If you do not agree with these Terms, you should not use
                 the App.
