@@ -96,60 +96,31 @@ function getPrefix(s: string) {
 
 <script>
   function initSearch() {
-    const searchInput = document.getElementById('search-input') as HTMLInputElement;
-    const searchContainer = document.getElementById('search-container');
-    const searchToggle = document.getElementById('search-toggle');
+    const input = document.getElementById('search-input') as HTMLInputElement;
+    const container = document.getElementById('search-container');
+    const toggle = document.getElementById('search-toggle');
     const sections = document.querySelectorAll('.provider-section');
 
-    if (searchToggle && searchContainer && searchInput) {
-      // 使用 cloneNode(true) 替换元素以清除所有旧的事件监听器
-      // 这是处理 View Transitions 导致重复绑定的最稳健方法
-      const newToggle = searchToggle.cloneNode(true);
-      searchToggle.parentNode?.replaceChild(newToggle, searchToggle);
-      
-      const newInput = searchInput.cloneNode(true);
-      searchInput.parentNode?.replaceChild(newInput, searchInput);
+    if (!toggle || !container || !input) return;
 
-      // 重新获取替换后的元素引用
-      const finalToggle = document.getElementById('search-toggle');
-      const finalInput = document.getElementById('search-input') as HTMLInputElement;
+    toggle.onclick = (e) => {
+      e.preventDefault();
+      if (!container.classList.toggle('hidden')) input.focus();
+    };
 
-      if (finalToggle && finalInput) {
-        finalToggle.addEventListener('click', (e) => {
-            e.preventDefault(); // 防止可能的默认行为
-            const isHidden = searchContainer.classList.toggle('hidden');
-            if (!isHidden) {
-              finalInput.focus();
-            }
+    input.oninput = () => {
+      const term = input.value.toLowerCase();
+      sections.forEach(s => {
+        let hasMatch = false;
+        s.querySelectorAll<HTMLElement>('.provider-card').forEach(c => {
+          const match = (c.dataset.name || '').includes(term);
+          c.style.display = match ? '' : 'none';
+          if (match) hasMatch = true;
         });
-
-        finalInput.addEventListener('input', (e) => {
-          const term = (e.target as HTMLInputElement).value.toLowerCase();
-          
-          sections.forEach(section => {
-            const cards = section.querySelectorAll('.provider-card');
-            let hasVisibleCards = false;
-
-            cards.forEach(card => {
-                const el = card as HTMLElement;
-                const name = el.dataset.name || '';
-                
-                if (name.includes(term)) {
-                    el.style.display = '';
-                    hasVisibleCards = true;
-                } else {
-                    el.style.display = 'none';
-                }
-            });
-
-            // 切换章节显示状态
-            (section as HTMLElement).style.display = hasVisibleCards ? '' : 'none';
-          });
-        });
-      }
-    }
+        (s as HTMLElement).style.display = hasMatch ? '' : 'none';
+      });
+    };
   }
 
-  // 监听 Astro 页面加载事件（针对软导航）
   document.addEventListener('astro:page-load', initSearch);
 </script>
