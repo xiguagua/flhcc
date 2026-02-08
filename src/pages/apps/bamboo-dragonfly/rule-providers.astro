@@ -33,9 +33,19 @@ function getPrefix(s: string) {
       <input 
         type="text" 
         id="search-input" 
-        class="block w-full py-2.5 ps-10 pe-3 text-base text-gray-900 border border-black/5 dark:border-white/10 rounded-2xl bg-white/50 dark:bg-white/10 focus:ring-black/20 focus:border-black/20 dark:focus:ring-white/20 dark:focus:border-white/20 dark:placeholder-gray-400 dark:text-white focus:outline-none transition-colors" 
+        class="block w-full py-2.5 ps-10 pe-10 text-base text-gray-900 border border-black/5 dark:border-white/10 rounded-2xl bg-white/50 dark:bg-white/10 focus:ring-black/20 focus:border-black/20 dark:focus:ring-white/20 dark:focus:border-white/20 dark:placeholder-gray-400 dark:text-white focus:outline-none transition-colors" 
         placeholder="搜索规则..." 
       />
+      <button 
+        id="search-clear" 
+        class="absolute inset-y-0 end-0 flex items-center pe-3 text-gray-400 hover:text-black dark:hover:text-white hidden"
+        aria-label="Clear search"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 6 6 18"></path>
+          <path d="m6 6 12 12"></path>
+        </svg>
+      </button>
     </div>
 
     <div class="flex flex-col space-y-5">
@@ -99,17 +109,15 @@ function getPrefix(s: string) {
     const input = document.getElementById('search-input') as HTMLInputElement;
     const container = document.getElementById('search-container');
     const toggle = document.getElementById('search-toggle');
+    const clearBtn = document.getElementById('search-clear');
     const sections = document.querySelectorAll('.provider-section');
 
-    if (!toggle || !container || !input) return;
+    if (!toggle || !container || !input || !clearBtn) return;
 
-    toggle.onclick = (e) => {
-      e.preventDefault();
-      if (!container.classList.toggle('hidden')) input.focus();
-    };
-
-    input.oninput = () => {
+    const updateSearch = () => {
       const term = input.value.toLowerCase();
+      clearBtn.classList.toggle('hidden', term === '');
+      
       sections.forEach(s => {
         let hasMatch = false;
         s.querySelectorAll<HTMLElement>('.provider-card').forEach(c => {
@@ -120,6 +128,19 @@ function getPrefix(s: string) {
         (s as HTMLElement).style.display = hasMatch ? '' : 'none';
       });
     };
+
+    toggle.onclick = (e) => {
+      e.preventDefault();
+      if (!container.classList.toggle('hidden')) input.focus();
+    };
+
+    clearBtn.onclick = () => {
+      input.value = '';
+      updateSearch();
+      input.focus();
+    };
+
+    input.oninput = updateSearch;
   }
 
   document.addEventListener('astro:page-load', initSearch);
