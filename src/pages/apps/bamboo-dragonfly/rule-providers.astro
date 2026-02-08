@@ -150,9 +150,6 @@ function getPrefix(s: string) {
     }
   }
 
-  // 立即运行一次（针对硬刷新）
-  initSearch();
-
   // 监听 Astro 页面加载事件（针对软导航）
   document.addEventListener('astro:page-load', initSearch);
 </script>
