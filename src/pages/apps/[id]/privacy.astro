@@ -12,7 +12,6 @@ export async function getStaticPaths() {
   }));
 }
 
-const { id } = Astro.params;
 const { title } = Astro.props;
 const effectiveDate = new Date("2024-08-27");
 const mail = "contact@flhcctech.com";
@@ -43,11 +42,11 @@ const clauses = [
     {
         title: "4. Changes to This Privacy Policy",
         content:
-            'We may update this Privacy Policy from time to time. Any changes \
-                will be reflected in the "Effective Date" at the top of this \
+            "We may update this Privacy Policy from time to time. Any changes \
+                will be reflected in the \"Effective Date\" at the top of this \
                 document. We encourage you to review this Privacy Policy \
                 periodically to stay informed about how we handle privacy \
-                matters.',
+                matters.",
     },
     {
         title: "5. Contact Us",

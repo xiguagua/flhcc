@@ -86,35 +86,35 @@ const title = "分流规则商店";
 
 <script>
   function initPage() {
-    const input = document.getElementById('search-input') as HTMLInputElement;
-    const container = document.getElementById('search-container');
-    const toggle = document.getElementById('search-toggle');
-    const clearBtn = document.getElementById('search-clear');
-    const sections = document.querySelectorAll('.provider-section');
+    const input = document.getElementById("search-input") as HTMLInputElement;
+    const container = document.getElementById("search-container");
+    const toggle = document.getElementById("search-toggle");
+    const clearBtn = document.getElementById("search-clear");
+    const sections = document.querySelectorAll(".provider-section");
 
     if (toggle && container && input && clearBtn) {
       const updateSearch = () => {
         const term = input.value.toLowerCase();
-        clearBtn.classList.toggle('hidden', term === '');
+        clearBtn.classList.toggle("hidden", term === "");
         
         sections.forEach(s => {
           let hasMatch = false;
-          s.querySelectorAll<HTMLElement>('.provider-card').forEach(c => {
-            const match = (c.dataset.name || '').includes(term);
-            c.style.display = match ? '' : 'none';
+          s.querySelectorAll<HTMLElement>(".provider-card").forEach(c => {
+            const match = (c.dataset.name || "").includes(term);
+            c.style.display = match ? "" : "none";
             if (match) hasMatch = true;
           });
-          (s as HTMLElement).style.display = hasMatch ? '' : 'none';
+          (s as HTMLElement).style.display = hasMatch ? "" : "none";
         });
       };
 
       toggle.onclick = (e) => {
         e.preventDefault();
-        if (!container.classList.toggle('hidden')) input.focus();
+        if (!container.classList.toggle("hidden")) input.focus();
       };
 
       clearBtn.onclick = () => {
-        input.value = '';
+        input.value = "";
         updateSearch();
         input.focus();
       };
@@ -125,28 +125,28 @@ const title = "分流规则商店";
     // Desktop behavior: Copy link to clipboard
     const isDesktop = !/Mobi|Android/i.test(navigator.userAgent);
     if (isDesktop) {
-      document.querySelectorAll<HTMLAnchorElement>('.provider-card').forEach(card => {
-        card.addEventListener('click', async (e) => {
+      document.querySelectorAll<HTMLAnchorElement>(".provider-card").forEach(card => {
+        card.addEventListener("click", async (e) => {
           e.preventDefault();
           try {
             await navigator.clipboard.writeText(card.href);
-            const innerDiv = card.querySelector('div');
+            const innerDiv = card.querySelector("div");
             if (innerDiv) {
               const originalText = innerDiv.innerText;
               innerDiv.innerText = "已复制链接 ✅";
-              innerDiv.classList.add('!text-green-600', 'dark:!text-green-400');
+              innerDiv.classList.add("!text-green-600", "dark:!text-green-400");
               setTimeout(() => {
                 innerDiv.innerText = originalText;
-                innerDiv.classList.remove('!text-green-600', 'dark:!text-green-400');
+                innerDiv.classList.remove("!text-green-600", "dark:!text-green-400");
               }, 800);
             }
           } catch (err) {
-            console.error('Failed to copy: ', err);
+            console.error("Failed to copy: ", err);
           }
         });
       });
     }
   }
 
-  document.addEventListener('astro:page-load', initPage);
+  document.addEventListener("astro:page-load", initPage);
 </script>
