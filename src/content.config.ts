@@ -12,16 +12,6 @@ const blog = defineCollection({
   }),
 });
 
-const work = defineCollection({
-  loader: glob({ pattern: "**/*.(md|mdx)", base: "./src/content/work" }),
-  schema: z.object({
-    company: z.string(),
-    role: z.string(),
-    dateStart: z.coerce.date(),
-    dateEnd: z.union([z.coerce.date(), z.string()]),
-  }),
-});
-
 const apps = defineCollection({
   loader: glob({ pattern: "**/*.(md|mdx)", base: "./src/content/apps" }),
   // type: "content",
@@ -38,4 +28,4 @@ const apps = defineCollection({
   }),
 });
 
-export const collections = { blog, work, apps };
+export const collections = { blog, apps };

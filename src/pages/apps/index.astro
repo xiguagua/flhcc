@@ -1,13 +1,11 @@
 ---
-import { getCollection } from "astro:content";
 import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
 import ArrowCard from "@components/ArrowCard.astro";
 import { APPS } from "@consts";
+import { getPublished } from "@lib/content";
 
-const apps = (await getCollection("apps"))
-  .filter(project => !project.data.draft)
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const apps = await getPublished("apps");
 ---
 
 <PageLayout title={APPS.TITLE} description={APPS.DESCRIPTION}>
