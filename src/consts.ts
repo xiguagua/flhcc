@@ -35,10 +35,15 @@ export const SOCIALS: Socials = [
   },
   { 
     NAME: "github",
-    HREF: "https://github.com/markhorn-dev"
+    HREF: "https://github.com/markhorn_dev"
   },
   { 
     NAME: "linkedin",
     HREF: "https://www.linkedin.com/in/markhorn-dev",
   }
 ];
+
+export const BAMBOO_DRAGONFLY = {
+  RULE_PROVIDER_URL_PREFIX: "https://raw.githubusercontent.com/xiguagua/ios_rule_script/refs/heads/bamboo-dragonfly/rule/Clash",
+  LINK_ORIGIN: "https://link.flhcctech.com",
+};
