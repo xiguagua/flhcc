@@ -11,10 +11,10 @@ const apps = await getPublished("apps");
 <PageLayout title={APPS.TITLE} description={APPS.DESCRIPTION}>
   <Container>
     <div class="space-y-10">
-      <div class="animate font-bold text-2xl text-black dark:text-white">
+      <div class="animate font-serif text-5xl font-semibold tracking-[-0.06em] text-[#17130f] dark:text-[#fff7e8]">
         Apps
       </div>
-      <ul class="animate flex flex-col gap-4">
+      <ul class="animate flex flex-col">
         {
           apps.map((app) => (
             <li>

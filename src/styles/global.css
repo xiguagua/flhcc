@@ -1,6 +1,8 @@
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities; */
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/lora/400.css';
+@import '@fontsource/lora/600.css';
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 
@@ -19,42 +21,49 @@ body {
 }
 
 body {
-  @apply font-sans antialiased;
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  @apply antialiased;
   @apply flex flex-col;
-  @apply bg-[#fcfaf2] dark:bg-[#1a1714];
-  @apply text-[#3c3836] dark:text-[#ebdbb2];
+  @apply bg-[#f7f1e8] dark:bg-[#15120f];
+  @apply text-[#24211d] dark:text-[#eee6d8];
 }
 
 header {
-  /* @apply fixed top-0 left-0 right-0 z-50 py-5; */
-  @apply top-0 left-0 right-0 z-50 py-5;
-  @apply bg-[#fcfaf2]/50 dark:bg-[#1a1714]/20;
-  @apply backdrop-blur-md saturate-150;
+  @apply top-0 left-0 right-0 z-50 py-6 text-[0.8125rem];
+  @apply bg-[#f7f1e8]/70 dark:bg-[#15120f]/70;
+  @apply backdrop-blur-md saturate-150 border-b border-[#24211d]/10 dark:border-[#eee6d8]/10;
 }
 
 main {
-  /* @apply flex-1 py-32; */
-  @apply flex-1 py-8;
+  @apply flex-1 py-12 md:py-20;
 }
 
 footer {
-  @apply py-5 text-sm;
+  @apply mt-12 py-10 text-sm border-t border-[#24211d]/10 dark:border-[#eee6d8]/10;
 }
 
 
 
 @layer base {
   article {
-    @apply max-w-full prose dark:prose-invert prose-img:mx-auto prose-img:my-auto;
-    @apply prose-headings:font-semibold;
-    @apply prose-headings:text-black prose-headings:dark:text-white;
+    @apply max-w-none prose dark:prose-invert prose-img:mx-auto prose-img:my-auto;
+    @apply prose-p:leading-8 prose-p:text-[#3c342c] prose-p:dark:text-[#ded2c0];
+    @apply prose-headings:font-serif prose-headings:font-semibold prose-headings:tracking-[-0.03em];
+    @apply prose-headings:text-[#16130f] prose-headings:dark:text-[#fff7e8];
+    @apply prose-h1:text-5xl prose-h2:mt-16 prose-h2:text-3xl prose-h3:text-2xl;
+    @apply prose-strong:text-[#16130f] prose-strong:dark:text-[#fff7e8];
+    @apply prose-code:rounded prose-code:bg-[#24211d]/8 prose-code:px-1 prose-code:py-0.5 prose-code:text-[#24211d] prose-code:dark:bg-[#eee6d8]/10 prose-code:dark:text-[#fff7e8];
   }
 
   article a {
-    @apply font-sans text-current underline underline-offset-3;
-    @apply decoration-red-400 dark:decoration-orange-500;
+    @apply text-current underline underline-offset-4;
+    @apply decoration-[#24211d]/25 dark:decoration-[#eee6d8]/30;
     @apply transition-colors duration-300 ease-in-out;
   }
+}
+
+.font-serif {
+  font-family: 'Lora', ui-serif, Georgia, serif;
 }
 
 .animate {

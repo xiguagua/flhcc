@@ -6,30 +6,13 @@ import { SITE } from "@consts";
 
 <header>
   <Container>
-    <div class="flex flex-wrap gap-y-2 justify-between">
+    <div class="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 uppercase tracking-[0.18em] text-[#6d6257] dark:text-[#b9ab98]">
       <Link href="/" underline={false}>
-        <div class="font-semibold">
+        <div class="font-semibold text-[#17130f] dark:text-[#fff7e8]">
           {SITE.NAME}
         </div>
       </Link>
-      <!-- <nav class="flex gap-1">
-        <Link href="/blog">
-          blog
-        </Link>
-        <span>
-          {`/`}
-        </span>
-        <Link href="/work">
-          work
-        </Link>
-        <span>
-          {`/`}
-        </span>
-        <Link href="/projects">
-          projects
-        </Link>
-      </nav> -->
-      <Link href={`mailto:${SITE.EMAIL}`} aria-label={`Email ${SITE.NAME}`}>
+      <Link href={`mailto:${SITE.EMAIL}`} aria-label={`Email ${SITE.NAME}`} underline={false}>
         {SITE.EMAIL}
       </Link>
     </div>

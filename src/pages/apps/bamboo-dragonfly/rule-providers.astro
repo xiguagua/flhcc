@@ -10,10 +10,10 @@ const title = "分流规则商店";
 
 <PageLayout title={title} description={title}>
   <Container>
-    <div class="flex justify-between items-center mb-6">
-        <h1 class="text-black dark:text-white text-xl font-semibold">🛒 分流规则商店 v1.2</h1>
-        <button id="search-toggle" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors" aria-label="Toggle Search">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-black dark:text-white">
+    <div class="flex justify-between items-center mb-8 gap-4">
+        <h1 class="font-serif text-4xl font-semibold leading-[1.05] tracking-[-0.06em] text-[#17130f] dark:text-[#fff7e8]">分流规则商店 v1.2</h1>
+        <button id="search-toggle" class="p-2 border border-[#24211d]/15 dark:border-[#eee6d8]/15 hover:text-[#17130f] dark:hover:text-[#fff7e8] transition-colors" aria-label="Toggle Search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-current">
                 <circle cx="11" cy="11" r="8"></circle>
                 <path d="m21 21-4.3-4.3"></path>
             </svg>
@@ -29,7 +29,7 @@ const title = "分流规则商店";
       <input 
         type="text" 
         id="search-input" 
-        class="block w-full py-2.5 ps-10 pe-10 text-base text-gray-900 border border-black/5 dark:border-white/10 rounded-2xl bg-white/50 dark:bg-white/10 focus:ring-black/20 focus:border-black/20 dark:focus:ring-white/20 dark:focus:border-white/20 dark:placeholder-gray-400 dark:text-white focus:outline-none transition-colors" 
+        class="block w-full py-2.5 ps-10 pe-10 text-base text-[#24211d] border border-[#24211d]/15 dark:border-[#eee6d8]/15 bg-[#fffaf1]/60 dark:bg-[#eee6d8]/10 focus:ring-[#24211d]/20 focus:border-[#24211d]/25 dark:focus:ring-[#eee6d8]/20 dark:focus:border-[#eee6d8]/25 dark:placeholder-[#b9ab98] dark:text-[#fff7e8] focus:outline-none transition-colors" 
         placeholder="搜索规则..." 
       />
       <button 
@@ -46,14 +46,14 @@ const title = "分流规则商店";
 
     <div class="flex flex-col space-y-5">
       <div class="provider-section">
-        <h2 class="text-black dark:text-white text-md font-semibold mb-2">WORLD:</h2>
+        <h2 class="text-xs font-semibold uppercase tracking-[0.22em] text-[#6d6257] dark:text-[#b9ab98] mb-3">WORLD:</h2>
         <div class="animate grid grid-cols-2 sm:grid-cols-3 gap-3">
           {
             items.world.map((item) => {
               const link = buildProviderLink(item);
               return (
                 <a href={link} class="provider-card flex" data-name={item.name.toLowerCase()}>
-                  <div class="w-full h-full text-neutral-700 dark:text-neutral-300 border border-black/5 dark:border-white/10 rounded-2xl bg-white/50 dark:bg-white/10 px-3 py-3 text-base break-words hover:scale-[1.02] hover:bg-white/80 dark:hover:bg-white/20 active:scale-95 transform transition">
+                  <div class="w-full h-full text-[#3c342c] dark:text-[#ded2c0] border border-[#24211d]/12 dark:border-[#eee6d8]/12 bg-[#fffaf1]/45 dark:bg-[#eee6d8]/8 px-3 py-3 text-base break-words hover:bg-[#fffaf1]/80 dark:hover:bg-[#eee6d8]/14 active:scale-95 transform transition">
                     {item.name}
                   </div>
                 </a>
@@ -63,14 +63,14 @@ const title = "分流规则商店";
         </div>
       </div>
       <div class="provider-section">
-        <h2 class="text-black dark:text-white text-md font-semibold mb-2">CN:</h2>
+        <h2 class="text-xs font-semibold uppercase tracking-[0.22em] text-[#6d6257] dark:text-[#b9ab98] mb-3">CN:</h2>
         <div class="animate grid grid-cols-2 sm:grid-cols-3 gap-3">
           {
             items.cn.map((item) => {
               const link = buildProviderLink(item);
               return (
                 <a href={link} class="provider-card flex" data-name={item.name.toLowerCase()}>
-                  <div class="w-full h-full text-neutral-700 dark:text-neutral-300 border border-black/5 dark:border-white/10 rounded-2xl bg-white/50 dark:bg-white/10 px-3 py-3 text-base break-words hover:scale-[1.02] hover:bg-white/80 dark:hover:bg-white/20 active:scale-95 transform transition">
+                  <div class="w-full h-full text-[#3c342c] dark:text-[#ded2c0] border border-[#24211d]/12 dark:border-[#eee6d8]/12 bg-[#fffaf1]/45 dark:bg-[#eee6d8]/8 px-3 py-3 text-base break-words hover:bg-[#fffaf1]/80 dark:hover:bg-[#eee6d8]/14 active:scale-95 transform transition">
                     {item.name}
                   </div>
                 </a>

@@ -10,9 +10,14 @@ import { SITE } from "@consts";
         <BackToTop />
       </div>
     </div> -->
-    <div class="flex justify-between items-center">
-      <div>
+    <div class="flex flex-wrap justify-between items-start gap-8 text-[#6d6257] dark:text-[#b9ab98]">
+      <div class="space-y-2">
+        <div class="font-serif text-xl font-semibold tracking-[-0.03em] text-[#17130f] dark:text-[#fff7e8]">
+          {SITE.NAME}
+        </div>
+        <div>
         &copy; 2026 {`|`} {SITE.NAME}
+        </div>
       </div>
       <div class="flex flex-wrap gap-1 items-center">
         <button
