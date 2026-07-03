@@ -24,40 +24,38 @@ body {
   font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
   @apply antialiased;
   @apply flex flex-col;
-  @apply bg-[#f7f1e8] dark:bg-[#15120f];
-  @apply text-[#24211d] dark:text-[#eee6d8];
+  @apply bg-[#050505] text-[#0f0d0b] dark:text-[#0f0d0b];
 }
 
 header {
-  @apply top-0 left-0 right-0 z-50 py-6 text-[0.8125rem];
-  @apply bg-[#f7f1e8]/70 dark:bg-[#15120f]/70;
-  @apply backdrop-blur-md saturate-150 border-b border-[#24211d]/10 dark:border-[#eee6d8]/10;
+  @apply top-0 left-0 right-0 z-50 p-1.5 text-[0.8125rem] sm:p-2;
+  @apply bg-[#050505];
 }
 
 main {
-  @apply flex-1 py-12 md:py-20;
+  @apply flex-1 mx-1.5 rounded-sm bg-[#eee7db] py-14 text-[#0f0d0b] shadow-[0_0_0_1px_rgb(238_231_219_/_0.12)] sm:mx-2 md:py-24;
 }
 
 footer {
-  @apply mt-12 py-10 text-sm border-t border-[#24211d]/10 dark:border-[#eee6d8]/10;
+  @apply bg-[#050505] p-1.5 pt-2 text-sm sm:p-2 sm:pt-3;
 }
 
 
 
 @layer base {
   article {
-    @apply max-w-none prose dark:prose-invert prose-img:mx-auto prose-img:my-auto;
-    @apply prose-p:leading-8 prose-p:text-[#3c342c] prose-p:dark:text-[#ded2c0];
+    @apply max-w-none prose prose-img:mx-auto prose-img:my-auto;
+    @apply prose-p:leading-8 prose-p:text-[#2c2924] prose-p:dark:text-[#2c2924];
     @apply prose-headings:font-serif prose-headings:font-semibold prose-headings:tracking-[-0.03em];
-    @apply prose-headings:text-[#16130f] prose-headings:dark:text-[#fff7e8];
+    @apply prose-headings:text-[#080706] prose-headings:dark:text-[#080706];
     @apply prose-h1:text-5xl prose-h2:mt-16 prose-h2:text-3xl prose-h3:text-2xl;
-    @apply prose-strong:text-[#16130f] prose-strong:dark:text-[#fff7e8];
-    @apply prose-code:rounded prose-code:bg-[#24211d]/8 prose-code:px-1 prose-code:py-0.5 prose-code:text-[#24211d] prose-code:dark:bg-[#eee6d8]/10 prose-code:dark:text-[#fff7e8];
+    @apply prose-strong:text-[#080706] prose-strong:dark:text-[#080706];
+    @apply prose-code:rounded prose-code:bg-[#080706]/10 prose-code:px-1 prose-code:py-0.5 prose-code:text-[#080706] prose-code:dark:bg-[#080706]/10 prose-code:dark:text-[#080706];
   }
 
   article a {
     @apply text-current underline underline-offset-4;
-    @apply decoration-[#24211d]/25 dark:decoration-[#eee6d8]/30;
+    @apply decoration-[#080706]/30 dark:decoration-[#eee7db]/35;
     @apply transition-colors duration-300 ease-in-out;
   }
 }
