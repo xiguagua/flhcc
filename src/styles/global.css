@@ -5,6 +5,7 @@
 @import '@fontsource/lora/600.css';
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
+@custom-variant dark (&:where(.dark, .dark *));
 
 html {
   overflow-y: scroll;
@@ -13,6 +14,39 @@ html {
 
 html.dark {
   color-scheme: dark;
+}
+
+:root {
+  --stage: #090807;
+  --paper: #f7f2e9;
+  --ink: #17120e;
+  --body: #403832;
+  --muted: #7f766d;
+  --surface: #ebe2d6;
+  --surface-hover: #e0d5c7;
+  --accent: #b06a48;
+}
+
+html:not(.dark) {
+  --stage: #090807;
+  --paper: #f7f2e9;
+  --ink: #17120e;
+  --body: #403832;
+  --muted: #7f766d;
+  --surface: #ebe2d6;
+  --surface-hover: #e0d5c7;
+  --accent: #b06a48;
+}
+
+html.dark {
+  --stage: #050403;
+  --paper: #17120e;
+  --ink: #f7f2e9;
+  --body: #d8cfc4;
+  --muted: #a99c8d;
+  --surface: #2a211b;
+  --surface-hover: #352a22;
+  --accent: #d58a63;
 }
 
 html,
@@ -24,20 +58,20 @@ body {
   font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
   @apply antialiased;
   @apply flex flex-col;
-  @apply bg-[#050505] text-[#0f0d0b] dark:text-[#0f0d0b];
+  @apply bg-[var(--stage)] text-[var(--ink)] dark:text-[var(--ink)];
 }
 
 header {
   @apply top-0 left-0 right-0 z-50 p-1.5 text-[0.8125rem] sm:p-2;
-  @apply bg-[#050505];
+  @apply bg-[var(--stage)];
 }
 
 main {
-  @apply flex-1 mx-1.5 rounded-sm bg-[#eee7db] py-14 text-[#0f0d0b] shadow-[0_0_0_1px_rgb(238_231_219_/_0.12)] sm:mx-2 md:py-24;
+  @apply flex-1 mx-1.5 rounded-sm bg-[var(--paper)] py-14 text-[var(--ink)] shadow-[0_0_0_1px_rgb(237_240_223_/_0.14)] sm:mx-2 md:py-24;
 }
 
 footer {
-  @apply bg-[#050505] p-1.5 pt-2 text-sm sm:p-2 sm:pt-3;
+  @apply bg-[var(--stage)] p-1.5 pt-2 text-sm sm:p-2 sm:pt-3;
 }
 
 
@@ -45,17 +79,17 @@ footer {
 @layer base {
   article {
     @apply max-w-none prose prose-img:mx-auto prose-img:my-auto;
-    @apply prose-p:leading-8 prose-p:text-[#2c2924] prose-p:dark:text-[#2c2924];
+    @apply prose-p:leading-8 prose-p:text-[var(--body)] prose-p:dark:text-[var(--body)];
     @apply prose-headings:font-serif prose-headings:font-semibold prose-headings:tracking-[-0.03em];
-    @apply prose-headings:text-[#080706] prose-headings:dark:text-[#080706];
+    @apply prose-headings:text-[var(--ink)] prose-headings:dark:text-[var(--ink)];
     @apply prose-h1:text-5xl prose-h2:mt-16 prose-h2:text-3xl prose-h3:text-2xl;
-    @apply prose-strong:text-[#080706] prose-strong:dark:text-[#080706];
-    @apply prose-code:rounded prose-code:bg-[#080706]/10 prose-code:px-1 prose-code:py-0.5 prose-code:text-[#080706] prose-code:dark:bg-[#080706]/10 prose-code:dark:text-[#080706];
+    @apply prose-strong:text-[var(--ink)] prose-strong:dark:text-[var(--ink)];
+    @apply prose-code:rounded prose-code:bg-[var(--surface)] prose-code:px-1 prose-code:py-0.5 prose-code:text-[var(--ink)] prose-code:dark:bg-[var(--surface)] prose-code:dark:text-[var(--ink)];
   }
 
   article a {
     @apply text-current underline underline-offset-4;
-    @apply decoration-[#080706]/30 dark:decoration-[#eee7db]/35;
+    @apply decoration-[var(--accent)]/45 dark:decoration-[var(--accent)]/45;
     @apply transition-colors duration-300 ease-in-out;
   }
 }

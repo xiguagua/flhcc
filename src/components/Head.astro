@@ -87,28 +87,22 @@ const { title, description, image = "/nano.png", keywords } = Astro.props;
     const lightThemeButton = document.getElementById("light-theme-button");
     lightThemeButton?.addEventListener("click", () => {
       localStorage.setItem("theme", "light");
-      toggleTheme(false);
+      applyTheme("light");
     });
 
     const darkThemeButton = document.getElementById("dark-theme-button");
     darkThemeButton?.addEventListener("click", () => {
       localStorage.setItem("theme", "dark");
-      toggleTheme(true);
+      applyTheme("dark");
     });
 
     const systemThemeButton = document.getElementById("system-theme-button");
     systemThemeButton?.addEventListener("click", () => {
       localStorage.setItem("theme", "system");
-      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+      applyTheme("system");
     });
 
-    window.matchMedia("(prefers-color-scheme: dark)")
-      .addEventListener("change", event => {
-        if (localStorage.theme === "system") {
-          toggleTheme(event.matches);
-        }
-      }
-    );
+    initSystemThemeListener();
 
     document.addEventListener("scroll", onScroll);
   }
@@ -139,7 +133,24 @@ const { title, description, image = "/nano.png", keywords } = Astro.props;
     });
   }
 
-function toggleTheme(dark) {
+  function applyTheme(mode) {
+    const theme = mode || localStorage.getItem("theme") || "system";
+    const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    toggleTheme(theme === "dark" || (theme === "system" && systemDark));
+  }
+
+  function initSystemThemeListener() {
+    if (window.__flhccSystemThemeListenerAdded) return;
+    window.__flhccSystemThemeListenerAdded = true;
+
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+      const theme = localStorage.getItem("theme") || "system";
+      if (theme === "system") applyTheme("system");
+    });
+  }
+
+  function toggleTheme(dark) {
     const css = document.createElement("style");
 
     css.appendChild(
@@ -168,13 +179,7 @@ function toggleTheme(dark) {
   }
 
   function preloadTheme() {
-    const userTheme = localStorage.theme;
-
-    if (userTheme === "light" || userTheme === "dark") {
-      toggleTheme(userTheme === "dark");
-    } else {
-      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
-    }
+    applyTheme();
   }
 
   document.addEventListener("DOMContentLoaded", () => init());

@@ -15,10 +15,10 @@ const icons = import.meta.glob<{ default: ImageMetadata }>("/src/assets/*.{jpeg,
 ---
 
 <!-- <a href={`/${entry.collection}/${entry.slug}`} class="relative group flex flex-nowrap py-3 px-4 pr-10 rounded-lg border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"> -->
-  <a href={href} class="relative group flex flex-nowrap py-4 px-0 pr-10 border-t border-[#080706]/22 dark:border-[#080706]/22 hover:text-[#080706] dark:hover:text-[#080706] transition-colors duration-300 ease-in-out">
+  <a href={href} class="relative group flex flex-nowrap py-4 px-0 pr-10 border-t border-[var(--ink)]/22 dark:border-[var(--ink)]/22 hover:text-[var(--ink)] dark:hover:text-[var(--ink)] transition-colors duration-300 ease-in-out">
 
     <div class="flex flex-1 space-x-3 items-center truncate">
-      {appIcon && (<Image class="rounded-xl shadow-sm ring-1 ring-[#080706]/15 dark:ring-[#eee7db]/15" src={icons[appIcon]()} alt={entry.data.title} width="48" height="48"/>)
+      {appIcon && (<Image class="rounded-xl shadow-sm ring-1 ring-[var(--ink)]/15 dark:ring-[var(--ink)]/15" src={icons[appIcon]()} alt={entry.data.title} width="48" height="48"/>)
 }
       
       <div class="font-serif text-xl font-semibold tracking-[-0.03em]">
