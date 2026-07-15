@@ -58,7 +58,7 @@ body {
   font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
   @apply antialiased;
   @apply flex flex-col;
-  @apply bg-[var(--stage)] text-[var(--ink)] dark:text-[var(--ink)];
+  @apply bg-[var(--paper)] text-[var(--ink)] dark:text-[var(--ink)];
 }
 
 header {
