@@ -62,16 +62,15 @@ body {
 }
 
 header {
-  @apply top-0 left-0 right-0 z-50 p-1.5 text-[0.8125rem] sm:p-2;
-  @apply bg-[var(--stage)];
+  @apply top-0 left-0 right-0 z-50 border-b border-[var(--surface)] bg-[var(--paper)] text-[0.8125rem];
 }
 
 main {
-  @apply flex-1 mx-1.5 rounded-sm bg-[var(--paper)] py-14 text-[var(--ink)] shadow-[0_0_0_1px_rgb(237_240_223_/_0.14)] sm:mx-2 md:py-24;
+  @apply flex-1 bg-[var(--paper)] py-14 text-[var(--ink)] md:py-24;
 }
 
 footer {
-  @apply bg-[var(--stage)] p-1.5 pt-2 text-sm sm:p-2 sm:pt-3;
+  @apply border-t border-[var(--surface)] bg-[var(--paper)] text-sm;
 }
 
 
