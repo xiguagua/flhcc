@@ -18,7 +18,7 @@ html.dark {
 
 :root {
   --stage: #111110;
-  --paper: #f5f5f2;
+  --paper: #fafaf7;
   --ink: #1d1d1b;
   --body: #4d4c48;
   --muted: #7d7b76;
@@ -29,7 +29,7 @@ html.dark {
 
 html:not(.dark) {
   --stage: #111110;
-  --paper: #f5f5f2;
+  --paper: #fafaf7;
   --ink: #1d1d1b;
   --body: #4d4c48;
   --muted: #7d7b76;
