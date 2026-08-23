@@ -6,6 +6,11 @@ import { buildProviderLink } from "@lib/rule-provider";
 import { items } from "./_items.json";
 
 const title = "分流规则商店";
+
+function colorIndex(initial: string): number {
+  const code = initial.toUpperCase().charCodeAt(0);
+  return (code * 13) % 5;
+}
 ---
 
 <PageLayout title={title} description={title}>
@@ -62,8 +67,8 @@ const title = "分流规则商店";
                 const link = buildProviderLink(item);
                 return (
                   <a href={link} class="provider-card group flex" data-name={item.name.toLowerCase()}>
-                    <div class="w-full h-full flex items-center justify-between gap-2 rounded-lg border border-[var(--ink)]/15 dark:border-[var(--ink)]/20 bg-transparent px-3.5 py-3 text-base text-[var(--body)] dark:text-[var(--body)] transition-colors duration-200 group-hover:bg-[var(--surface-hover)] dark:group-hover:bg-[var(--surface-hover)] group-hover:text-[var(--ink)] dark:group-hover:text-[var(--ink)] group-active:scale-[0.97] break-words">
-                      <span>{item.name}</span>
+                    <div class="w-full h-full flex items-center justify-between gap-2 rounded-lg border border-[var(--ink)]/15 dark:border-[var(--ink)]/20 bg-white dark:bg-[var(--surface)] px-3.5 py-3 text-base text-[var(--body)] dark:text-[var(--body)] transition-colors duration-200 group-hover:bg-[var(--surface-hover)] dark:group-hover:bg-[var(--surface-hover)] group-hover:text-[var(--ink)] dark:group-hover:text-[var(--ink)] group-active:scale-[0.97] break-words">
+                      <span><span class={`initial-${colorIndex(item.name.slice(0, 1))} mr-1 inline-block rounded-sm px-1 font-semibold leading-none text-white`}>{item.name.slice(0, 1)}</span>{item.name.slice(1)}</span>
                       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-[var(--muted)] opacity-0 -translate-x-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0 group-hover:text-[var(--accent)]">
                         <path d="M5 12h14" />
                         <path d="m12 5 7 7-7 7" />
@@ -80,6 +85,14 @@ const title = "分流规则商店";
     
   </Container>
 </PageLayout>
+
+<style>
+  .initial-0 { background-image: linear-gradient(to bottom, hsl(2 52% 54%), hsl(2 50% 46%)); }
+  .initial-1 { background-image: linear-gradient(to bottom, hsl(36 62% 45%), hsl(36 58% 37%)); }
+  .initial-2 { background-image: linear-gradient(to bottom, hsl(151 44% 39%), hsl(151 42% 32%)); }
+  .initial-3 { background-image: linear-gradient(to bottom, hsl(216 55% 51%), hsl(216 52% 43%)); }
+  .initial-4 { background-image: linear-gradient(to bottom, hsl(291 41% 52%), hsl(291 38% 44%)); }
+</style>
 
 <script>
   function initPage() {
@@ -133,11 +146,11 @@ const title = "分流规则商店";
             await navigator.clipboard.writeText(card.href);
             const label = card.querySelector("span");
             if (label) {
-              const originalText = label.innerText;
-              label.innerText = "已复制链接 ✅";
+              const originalHTML = label.innerHTML;
+              label.textContent = "已复制链接 ✅";
               card.querySelector("div")?.classList.add("!text-green-600", "dark:!text-green-400");
               setTimeout(() => {
-                label.innerText = originalText;
+                label.innerHTML = originalHTML;
                 card.querySelector("div")?.classList.remove("!text-green-600", "dark:!text-green-400");
               }, 800);
             }
