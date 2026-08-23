@@ -123,7 +123,11 @@ const title = "分流规则商店";
     }
 
     // Desktop behavior: Copy link to clipboard
-    const isDesktop = !/Mobi|Android/i.test(navigator.userAgent);
+    // iPadOS Safari in "request desktop site" mode reports a plain Mac UA,
+    // so also treat Macs with multi-touch as iPad (real Macs have maxTouchPoints 0)
+    const ua = navigator.userAgent;
+    const isIpadOs = /iPad/i.test(ua) || (/Macintosh/i.test(ua) && navigator.maxTouchPoints > 1);
+    const isDesktop = !(/Mobi|Android/i.test(ua) || isIpadOs);
     if (isDesktop) {
       document.querySelectorAll<HTMLAnchorElement>(".provider-card").forEach(card => {
         card.addEventListener("click", async (e) => {
