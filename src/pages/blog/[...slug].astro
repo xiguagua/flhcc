@@ -28,7 +28,7 @@ const { Content } = await render(post);
       </BackToPrev>
     </div>
     <div class="space-y-4 my-12">
-      <div class="animate flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-[var(--muted)] dark:text-[var(--muted)]">
+      <div class="animate flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-muted">
         <div>
           <FormattedDate date={post.data.date} />
         </div>
@@ -37,7 +37,7 @@ const { Content } = await render(post);
           {post.body && readingTime(post.body)}
         </div>
       </div>
-      <h1 class="animate font-serif text-[2.35rem] font-semibold leading-[1.1] tracking-[-0.045em] text-[var(--ink)] dark:text-[var(--ink)] sm:text-5xl md:text-6xl md:leading-[1.05] md:tracking-[-0.06em]">
+      <h1 class="animate font-serif text-[2.35rem] font-semibold leading-[1.1] tracking-[-0.02em] text-ink sm:text-5xl md:text-6xl md:leading-[1.05] md:tracking-[-0.03em]">
         {post.data.title}
       </h1>
     </div>

@@ -16,8 +16,8 @@ function colorIndex(initial: string): number {
 <PageLayout title={title} description={title}>
   <Container>
     <div class="flex justify-between items-center mb-8 gap-4">
-        <h1 class="font-serif text-[2.1rem] font-semibold leading-[1.1] tracking-[-0.045em] text-[var(--ink)] dark:text-[var(--ink)] sm:text-4xl sm:leading-[1.05] sm:tracking-[-0.06em]">分流规则商店 v1.4</h1>
-        <button id="search-toggle" class="p-2 rounded-lg border border-[var(--ink)]/15 dark:border-[var(--ink)]/20 text-[var(--body)] dark:text-[var(--body)] transition-colors duration-200 hover:bg-[var(--surface-hover)] dark:hover:bg-[var(--surface-hover)] hover:text-[var(--ink)] dark:hover:text-[var(--ink)] active:scale-[0.95]" aria-label="Toggle Search">
+        <h1 class="font-serif text-[2.1rem] font-semibold leading-[1.1] tracking-[-0.01em] text-ink sm:text-4xl sm:leading-[1.05]">分流规则商店 v1.4</h1>
+        <button id="search-toggle" class="p-2 rounded-lg border border-ink/15 text-body transition-colors duration-200 hover:bg-surface-hover hover:text-accent hover:border-accent/40 active:scale-[0.95]" aria-label="Toggle Search">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-current">
                 <circle cx="11" cy="11" r="8"></circle>
                 <path d="m21 21-4.3-4.3"></path>
@@ -39,7 +39,7 @@ function colorIndex(initial: string): number {
       />
       <button
         id="search-clear"
-        class="absolute inset-y-0 end-0 flex items-center pe-3 text-[var(--muted)] hover:text-[var(--ink)] dark:hover:text-[var(--ink)] transition-colors hidden"
+        class="absolute inset-y-0 end-0 flex items-center pe-3 text-muted hover:text-accent transition-colors hidden"
         aria-label="Clear search"
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

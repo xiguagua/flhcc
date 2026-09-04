@@ -1,11 +1,32 @@
-@import '@fontsource/inter/400.css';
-@import '@fontsource/inter/500.css';
-@import '@fontsource/inter/600.css';
-@import '@fontsource/lora/400.css';
-@import '@fontsource/lora/600.css';
+@import '@fontsource/inter/latin-400.css';
+@import '@fontsource/inter/latin-500.css';
+@import '@fontsource/inter/latin-600.css';
+@import '@fontsource/lora/latin-400.css';
+@import '@fontsource/lora/latin-600.css';
+@import '@fontsource/jetbrains-mono/latin-400.css';
+@import '@fontsource/jetbrains-mono/latin-500.css';
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 @custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'SF Pro Text', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+  --font-serif: 'Lora', Georgia, 'Songti SC', 'STSong', 'Noto Serif SC', 'SimSun', serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, 'PingFang SC', 'Microsoft YaHei', monospace;
+}
+
+/* Color tokens -> utilities like bg-paper / text-ink / border-surface / text-muted / bg-accent.
+   `inline` keeps them as var() references so `.dark` overrides below still switch at runtime. */
+@theme inline {
+  --color-stage: var(--stage);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-body: var(--body);
+  --color-muted: var(--muted);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-accent: var(--accent);
+}
 
 html {
   overflow-y: scroll;
@@ -16,18 +37,12 @@ html.dark {
   color-scheme: dark;
 }
 
-:root {
-  --stage: #111110;
-  --paper: #fafaf7;
-  --ink: #1d1d1b;
-  --body: #4d4c48;
-  --muted: #7d7b76;
-  --surface: #e7e5e0;
-  --surface-hover: #dbd8d2;
-  --accent: #b06a48;
+::selection {
+  background: color-mix(in oklab, var(--accent) 28%, transparent);
+  color: var(--ink);
 }
 
-html:not(.dark) {
+:root {
   --stage: #111110;
   --paper: #fafaf7;
   --ink: #1d1d1b;
@@ -55,46 +70,51 @@ body {
 }
 
 body {
-  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-sans);
   @apply antialiased;
   @apply flex flex-col;
-  @apply bg-[var(--paper)] text-[var(--ink)] dark:text-[var(--ink)];
+  @apply bg-paper text-ink;
 }
 
 header {
-  @apply top-0 left-0 right-0 z-50 border-b border-[var(--surface)] bg-[var(--paper)] text-[0.8125rem];
+  @apply top-0 left-0 right-0 z-50 border-b border-surface bg-paper text-[0.8125rem];
 }
 
 main {
-  @apply flex-1 bg-[var(--paper)] py-14 text-[var(--ink)] md:py-24;
+  @apply flex-1 bg-paper py-14 text-ink md:py-24;
 }
 
 footer {
-  @apply border-t border-[var(--surface)] bg-[var(--paper)] text-sm;
+  @apply border-t border-surface bg-paper text-sm;
 }
 
 
 
 @layer base {
+  code,
+  kbd,
+  samp,
+  pre {
+    font-family: var(--font-mono);
+  }
+
   article {
     @apply max-w-none prose prose-img:mx-auto prose-img:my-auto;
-    @apply prose-p:leading-8 prose-p:text-[var(--body)] prose-p:dark:text-[var(--body)];
-    @apply prose-headings:font-serif prose-headings:font-semibold prose-headings:tracking-[-0.03em];
-    @apply prose-headings:text-[var(--ink)] prose-headings:dark:text-[var(--ink)];
+    @apply prose-p:leading-8 prose-p:text-body;
+    @apply prose-headings:font-serif prose-headings:font-semibold prose-headings:tracking-[-0.02em];
+    @apply prose-headings:text-ink;
     @apply prose-h1:text-5xl prose-h2:mt-16 prose-h2:text-3xl prose-h3:text-2xl;
-    @apply prose-strong:text-[var(--ink)] prose-strong:dark:text-[var(--ink)];
-    @apply prose-code:rounded prose-code:bg-[var(--surface)] prose-code:px-1 prose-code:py-0.5 prose-code:text-[var(--ink)] prose-code:dark:bg-[var(--surface)] prose-code:dark:text-[var(--ink)];
+    @apply prose-strong:text-ink;
+    @apply prose-code:rounded prose-code:bg-surface prose-code:px-1 prose-code:py-0.5 prose-code:text-ink;
+    @apply prose-code:font-mono prose-code:text-[0.875em] prose-code:font-normal;
+    @apply prose-pre:font-mono prose-pre:text-sm prose-pre:leading-6;
   }
 
   article a {
     @apply text-current underline underline-offset-4;
-    @apply decoration-[var(--accent)]/45 dark:decoration-[var(--accent)]/45;
+    @apply decoration-accent/45 hover:decoration-accent/80 hover:text-accent;
     @apply transition-colors duration-300 ease-in-out;
   }
-}
-
-.font-serif {
-  font-family: 'Lora', ui-serif, Georgia, serif;
 }
 
 .animate {

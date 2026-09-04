@@ -13,7 +13,7 @@ const { href, external, underline = true, ...rest } = Astro.props;
 <a 
   href={href} 
   target={ external ? "_blank" : "_self" } 
-  class={cn("inline-block decoration-[var(--accent)]/35 dark:decoration-[var(--accent)]/35 hover:decoration-[var(--accent)]/75 hover:dark:decoration-[var(--accent)]/75 text-current hover:text-[var(--ink)] hover:dark:text-[var(--ink)] transition-colors duration-300 ease-in-out", underline && "underline underline-offset-4")}
+  class={cn("inline-block decoration-accent/35 hover:decoration-accent/75 text-current hover:text-accent transition-colors duration-300 ease-in-out", underline && "underline underline-offset-4")}
   {...rest}>
   <slot/>
 </a>
