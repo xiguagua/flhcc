@@ -9,32 +9,21 @@ export const SITE: Site = {
 
 export const HOME: Metadata = {
   TITLE: "Home",
-  DESCRIPTION: "Astro Nano is a minimal and lightweight blog and portfolio.",
+  DESCRIPTION: "Flhcc Tech is an independent iOS studio building native tools for Apple devices.",
 };
 
 export const BLOG: Metadata = {
   TITLE: "Blog",
-  DESCRIPTION: "A collection of articles on topics I am passionate about.",
+  DESCRIPTION: "Occasional notes from Flhcc Tech on iOS development.",
 };
 
 export const APPS: Metadata = {
   TITLE: "APPs",
-  DESCRIPTION: "A collection of my apps, with links to repositories and demos.",
+  DESCRIPTION: "Native apps for Apple devices, built by Flhcc Tech.",
 };
 
 export const SOCIALS: Socials = [
-  { 
-    NAME: "twitter-x",
-    HREF: "https://twitter.com/markhorn_dev",
-  },
-  { 
-    NAME: "github",
-    HREF: "https://github.com/markhorn_dev"
-  },
-  { 
-    NAME: "linkedin",
-    HREF: "https://www.linkedin.com/in/markhorn-dev",
-  }
+  // TODO: fill in real studio links, e.g. { NAME: "github", HREF: "https://github.com/..." }
 ];
 
 export const BAMBOO_DRAGONFLY = {

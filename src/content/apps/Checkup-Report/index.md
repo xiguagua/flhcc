@@ -1,78 +1,15 @@
 ---
 title: "Checkup Report"
-description: "Portfolio and blog build with astro."
+description: "Checkup report helper app for iOS."
 date: "Mar 18 2024"
-demoURL: "https://astro-sphere-demo.vercel.app"
-repoURL: "https://github.com/markhorn-dev/astro-sphere"
 appURL: "https://apps.apple.com/us/app/%E6%A3%80%E9%AA%8C%E5%8D%95%E5%B0%8F%E5%B8%AE%E6%89%8B/id1641849340?l=zh-Hans-CN"
 appIcon: "/src/assets/checkup-report.png"
 ---
 
-![Astro Sphere Lighthouse Score](/astro-sphere.jpg)
+检验单小帮手 Checkup Report — iOS app for managing your checkup reports.
 
-Astro Sphere is a static, minimalist, lightweight, lightning fast portfolio and blog theme based on my personal website.
+<!-- TODO: replace with real feature list, screenshots and FAQ -->
 
-It is primarily Astro, Tailwind and Typescript, with a very small amount of SolidJS for stateful components.
+### 下载
 
-## 🚀 Deploy your own
-
-<div class="flex gap-2">
-  <a target="_blank" aria-label="Deploy with Vercel" href="https://vercel.com/new/clone?repository-url=https://github.com/markhorn-dev/astro-sphere">
-    <img src="/deploy_vercel.svg" />
-  </a>
-  <a target="_blank" aria-label="Deploy with Netlify" href="https://app.netlify.com/start/deploy?repository=https://github.com/markhorn-dev/astro-sphere">
-    <img src="/deploy_netlify.svg" />
-  </a>
-</div>
-
-## 📋 Features
-
-- ✅ 100/100 Lighthouse performance
-- ✅ Responsive
-- ✅ Accessible
-- ✅ SEO-friendly
-- ✅ Typesafe
-- ✅ Minimal style
-- ✅ Light/Dark Theme
-- ✅ Animated UI
-- ✅ Tailwind styling
-- ✅ Auto generated sitemap
-- ✅ Auto generated RSS Feed
-- ✅ Markdown support
-- ✅ MDX Support (components in your markdown)
-- ✅ Searchable content (posts and projects)
-
-## 💯 Lighthouse score
-![Astro Sphere Lighthouse Score](/lighthouse.png)
-
-## 🕊️ Lightweight
-All pages under 100kb (including fonts)
-
-## ⚡︎ Fast
-Rendered in ~40ms on localhost
-
-## 📄 Configuration
-
-The blog posts on the demo serve as the documentation and configuration.
-
-## 💻 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-Replace npm with your package manager of choice. `npm`, `pnpm`, `yarn`, `bun`, etc
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run sync`            | Generates TypeScript types for all Astro modules.|
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-| `npm run lint`            | Run ESLint                                       |
-| `npm run lint:fix`        | Auto-fix ESLint issues                           |
-
-## 🏛️ License
-
-MIT
+<a href="https://apps.apple.com/us/app/%E6%A3%80%E9%AA%8C%E5%8D%95%E5%B0%8F%E5%B8%AE%E6%89%8B/id1641849340?l=zh-Hans-CN">Download on the App Store</a>

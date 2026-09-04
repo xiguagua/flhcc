@@ -15,14 +15,14 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = "/nano.png", keywords } = Astro.props;
+const { title, description, image = "/astro-nano.png", keywords } = Astro.props;
 ---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/favicon-dark.svg" media="(prefers-color-scheme: dark)">
-<link rel="icon" type="image/svg+xml" href="/favicon-dark.svg" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/svg+xml" href="/favicon-light.svg" media="(prefers-color-scheme: light)">
 <link rel="icon" type="image/x-icon" href="/favicon-dark.svg">
 <meta name="generator" content={Astro.generator} />
 
@@ -72,11 +72,7 @@ const { title, description, image = "/nano.png", keywords } = Astro.props;
 <script is:inline>
   function init() {
     preloadTheme();
-    onScroll();
     animate();
-
-    const backToTop = document.getElementById("back-to-top");
-    backToTop?.addEventListener("click", (event) => scrollToTop(event));
 
     const backToPrev = document.getElementById("back-to-prev");
     backToPrev?.addEventListener("click", () => window.history.back());
@@ -100,8 +96,6 @@ const { title, description, image = "/nano.png", keywords } = Astro.props;
     });
 
     initSystemThemeListener();
-
-    document.addEventListener("scroll", onScroll);
   }
 
   function animate() {
@@ -111,22 +105,6 @@ const { title, description, image = "/nano.png", keywords } = Astro.props;
       setTimeout(() => {
         element.classList.add("show");
       }, index * 150);
-    });
-  }
-
-  function onScroll() {
-    if (window.scrollY > 0) {
-      document.documentElement.classList.add("scrolled");
-    } else {
-      document.documentElement.classList.remove("scrolled");
-    }
-  }
-
-  function scrollToTop(event) {
-    event.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
     });
   }
 
