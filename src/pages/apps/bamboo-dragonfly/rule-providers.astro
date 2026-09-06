@@ -68,7 +68,7 @@ function colorIndex(initial: string): number {
                 return (
                   <a href={link} class="provider-card group flex" data-name={item.name.toLowerCase()}>
                     <div class="w-full h-full flex items-center justify-between gap-2 rounded-lg border-0 sm:border sm:border-ink/15 bg-white dark:bg-surface px-3.5 py-3 text-base text-body transition-colors duration-200 group-hover:bg-surface-hover group-hover:text-ink group-active:scale-[0.97] break-words">
-                      <span><span class={`initial-${colorIndex(item.name.slice(0, 1))} mr-1 inline-block rounded-sm px-1 font-semibold leading-none text-white`}>{item.name.slice(0, 1)}</span>{item.name.slice(1)}</span>
+                      <span><span class={`initial-${colorIndex(item.name.slice(0, 1))} mr-2 inline-flex size-6 items-center justify-center rounded-full text-sm font-semibold leading-none text-white`}>{item.name.slice(0, 1)}</span>{item.name.slice(1)}</span>
                       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-muted opacity-0 -translate-x-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0 group-hover:text-accent">
                         <path d="M5 12h14" />
                         <path d="m12 5 7 7-7 7" />
